@@ -1,0 +1,121 @@
+.banner {
+  position: relative;
+  font-family: sans-serif;
+  background-color: #ffc700;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  z-index: -2;
+  padding: 50px 83px 0 73px;
+  height: 500px;
+}
+
+.imgBanner {
+  position: absolute;
+  left: 33%;
+  bottom: -0.2px;
+  z-index: -1;
+}
+
+.banner h1 {
+  font-size: 64px;
+  font-weight: 700;
+  max-width: 480px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.anuncioDesconto {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 29px;
+  justify-content: center;
+}
+
+.anuncioDesconto strong {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.anuncioDesconto aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.anuncioDesconto aside p {
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 9px;
+}
+
+.anuncioDesconto aside div {
+  display: flex;
+  align-items: baseline;
+}
+
+.anuncioDesconto aside div span:first-child {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.anuncioDesconto aside div span:last-child {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.livrosDesconto {
+  display: flex;
+  gap: 34px;
+  width: 462px;
+  position: relative;
+}
+
+.livrosDesconto img:nth-child(2) {
+  position: absolute;
+  top: 116px;
+  left: 167px;
+}
+
+.livrosDesconto img:nth-child(3) {
+  position: absolute;
+  top: 70px;
+  right: -15px;
+}
+
+@media (min-width: 1700px) {
+  .banner h1 {
+    max-width: 500px;
+    margin-left: 133px;
+  }
+
+  .anuncio {
+    margin-right: 155px;
+  }
+}
+
+@media (max-width: 1260px) {
+  .livrosDesconto,
+  .anuncioDesconto {
+    display: none;
+  }
+  .imgBanner {
+    left: 56%;
+  }
+}
+
+@media (max-width: 900px) {
+  .banner {
+    text-align: center;
+    align-items: center;
+    height: auto;
+    position: initial;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+  }
+
+  .imgBanner {
+    position: initial;
+    margin-bottom: -15px;
+  }
+}
