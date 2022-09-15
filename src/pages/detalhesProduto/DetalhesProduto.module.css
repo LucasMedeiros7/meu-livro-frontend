@@ -1,44 +1,44 @@
 .detalhesContainer {
   max-width: 1084px;
   width: 90%;
-  margin: 63px auto 0;
+  margin: 3.938rem auto 0;
 
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 36px;
+  gap: 2.25rem;
 }
 
 .detalhesProduto {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2rem;
 }
 
 .detalhesProduto h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
 .detalhesProduto .precoProduto p:nth-child(1) {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 600;
   color: #f24405;
 }
 
 .detalhesProduto .precoProduto p:nth-child(2) {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   color: #5f5d5d;
 }
 
 .detalhesProduto .precoProduto button {
-  padding: 13px 76px;
+  padding: 0.813rem 4.75rem;
   margin-top: 12px;
   border: none;
   background-color: #ffc700;
   border-radius: 8px;
 
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -49,9 +49,9 @@
 }
 
 .detalhesProduto .avaliacaoProduto span {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
-  margin-top: 18px;
+  margin-top: 1.125rem;
 }
 
 .detalhesProduto .avaliacaoProduto img {
@@ -59,12 +59,26 @@
 }
 
 .detalhesProduto .descricaoProduto p {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.25rem;
 }
 
 .descricaoProduto {
-  height: 143px;
+  height: 8.94rem;
   overflow-y: scroll;
+}
+
+@media (max-width: 920px) {
+  .detalhesContainer > img {
+    margin: 0 auto;
+  }
+  .detalhesContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .descricaoProduto {
+    height: initial;
+    overflow-y: initial;
+  }
 }
