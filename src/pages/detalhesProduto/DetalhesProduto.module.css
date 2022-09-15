@@ -64,9 +64,11 @@
   line-height: 1.25rem;
 }
 
-.descricaoProduto {
-  height: 8.94rem;
-  overflow-y: scroll;
+.descricaoProduto span {
+  margin-left: 6px;
+  font-weight: 600;
+  color: #1479ff;
+  cursor: pointer;
 }
 
 @media (max-width: 920px) {
@@ -75,10 +77,5 @@
   }
   .detalhesContainer {
     grid-template-columns: 1fr;
-  }
-
-  .descricaoProduto {
-    height: initial;
-    overflow-y: initial;
   }
 }
