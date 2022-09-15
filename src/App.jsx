@@ -1,12 +1,14 @@
+import React from "react";
 import { Banner } from "./components/banner/Banner";
-import { DetalhesProduto } from "./pages/detalhesProduto/DetalhesProduto";
+import { CardProduto } from "./components/cardProduto/CardProduto";
 
 import "./global.css";
 
 export function App() {
   return (
     <div>
-      <DetalhesProduto />
+      <Banner />
+      <CardProduto/>
     </div>
   );
 }

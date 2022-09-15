@@ -1,0 +1,30 @@
+.mainCardProduto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+}
+.containerInterno{
+    width: 95%;
+    margin-top: 20px;
+    /* border: 1px solid red; */
+}
+.cardProduto{
+    width: 215px;
+    height: 425px;
+    margin: 20px 10px;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+}
+.imgProduto, .infoProduto, .btnComprar{
+    margin: 20px 20px 10px 20px;
+    /* border: 1px solid red; */
+}
+.btnComprar button{
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #FFC700;
+}
