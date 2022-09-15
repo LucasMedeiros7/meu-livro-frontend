@@ -1,3 +1,11 @@
+import { Banner } from "./components/banner/Banner";
+
+import "./global.css";
+
 export function App() {
-  return <h1>Meu Livro</h1>;
+  return (
+    <div>
+      <Banner />
+    </div>
+  );
 }
