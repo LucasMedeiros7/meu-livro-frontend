@@ -1,17 +1,55 @@
-.container input {
-  border: 2px solid gray;
+.container {
+  height: auto;
+  width: 600px;
+  margin: 73px auto 121px;
+  text-align: center;
 }
 
-.container {
-  height: 600px;
-  margin-bottom: 120px;
+.container h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.container input {
+  border: 1px solid #5f5d5d;
+  border-radius: 8px;
+  height: 52px;
+  width: 100%;
+  padding-left: 24px;
+  font-size: 1rem;
 }
 
 .container form {
   display: flex;
   flex-direction: column;
+  gap: 22px;
 }
 
-.container form .endereco {
+.container form .infoPessoal {
   display: flex;
+  gap: 31px;
+}
+
+.container form .endereco .cidade {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.container form .endereco .cidade input:nth-child(2) {
+  width: 65px;
+}
+
+.container form .cpf,
+.email {
+  margin-bottom: 22px;
+}
+
+.container button {
+  padding: 20px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffc700;
+  cursor: pointer;
 }

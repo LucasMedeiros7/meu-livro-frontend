@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat&family=Montserrat+Alternates:wght@700&display=swap");
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Para manter o Footer fixado no final da página */
-
   display: flex;
   align-items: center;
   justify-content: center;

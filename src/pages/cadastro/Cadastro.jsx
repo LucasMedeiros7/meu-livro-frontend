@@ -20,6 +20,7 @@ export function Cadastro() {
 
       const { localidade, uf, logradouro } = await res.json();
 
+      console.log(res);
       setDadosUsuario({
         ...dadosUsuario,
         endereco: {
@@ -28,8 +29,11 @@ export function Cadastro() {
           logradouro,
         },
       });
+
+      document.querySelector("#cep").style.border = " 1px solid #5f5d5d";
     } catch (erro) {
-      console.log(erro);
+      console.log(erro.message);
+      document.querySelector("#cep").style.border = "1px solid red";
     }
   }
 
@@ -43,16 +47,17 @@ export function Cadastro() {
     }
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    console.log(dadosUsuario);
+  }
+
   return (
     <div className={styles.container}>
       <h1>Cadastro</h1>
 
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log(dadosUsuario);
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <input
           placeholder="Nome"
           type="text"
@@ -63,56 +68,62 @@ export function Cadastro() {
             setDadosUsuario({ ...dadosUsuario, nome: e.target.value })
           }
         />
-        <div className={styles.endereco}>
-          <input
-            placeholder="CPF"
-            type="text"
-            id="cpf"
-            required
-            value={dadosUsuario.cpf}
-            onChange={verificaInputsNumericos}
-          />
+        <div className={styles.infoPessoal}>
+          <div>
+            <input
+              className={styles.cpf}
+              placeholder="CPF"
+              type="text"
+              id="cpf"
+              required
+              value={dadosUsuario.cpf}
+              onChange={verificaInputsNumericos}
+            />
 
-          <input
-            placeholder="CEP"
-            type="text"
-            id="cep"
-            onBlur={buscaCep}
-            required
-            value={dadosUsuario.cep}
-            onChange={verificaInputsNumericos}
-          />
-
-          <input
-            placeholder="Rua"
-            type="text"
-            id="rua"
-            required
-            readOnly
-            value={dadosUsuario.endereco.logradouro}
-          />
-
-          <input
-            placeholder="Cidade"
-            type="text"
-            id="cidade"
-            required
-            readOnly
-            value={dadosUsuario.endereco.localidade}
-          />
-
-          <input
-            placeholder="UF"
-            type="text"
-            id="uf"
-            required
-            readOnly
-            value={dadosUsuario.endereco.uf}
-          />
+            <input
+              placeholder="CEP"
+              type="text"
+              id="cep"
+              onBlur={buscaCep}
+              required
+              value={dadosUsuario.cep}
+              onChange={verificaInputsNumericos}
+            />
+          </div>
+          <div className={styles.endereco}>
+            <input
+              placeholder="Rua"
+              type="text"
+              id="rua"
+              required
+              readOnly
+              value={dadosUsuario.endereco.logradouro}
+            />
+            <div className={styles.cidade}>
+              <input
+                placeholder="Cidade"
+                type="text"
+                sssssssss
+                id="cidade"
+                required
+                readOnly
+                value={dadosUsuario.endereco.localidade}
+              />
+              <input
+                placeholder="UF"
+                type="text"
+                id="uf"
+                required
+                readOnly
+                value={dadosUsuario.endereco.uf}
+              />
+            </div>
+          </div>
         </div>
 
-        <div className={styles.emailESenha}>
+        <div>
           <input
+            className={styles.email}
             placeholder="E-mail"
             type="email"
             id="email"
