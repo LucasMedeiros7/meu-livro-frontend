@@ -31,6 +31,6 @@
 }
 
 .img {
-    width: 100%;
+    justify-content: center;
     max-width: 20%;
 }
