@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { registrarUsuario } from "../../services/usuarioApi";
 
 import styles from "./Cadastro.module.css";
 
 export function Cadastro() {
+  const [registrando, setRegistrando] = useState({
+    status: false,
+    mensagem: "",
+  });
   const [dadosUsuario, setDadosUsuario] = useState({
     nome: "",
     email: "",
@@ -20,7 +25,6 @@ export function Cadastro() {
 
       const { localidade, uf, logradouro } = await res.json();
 
-      console.log(res);
       setDadosUsuario({
         ...dadosUsuario,
         endereco: {
@@ -47,15 +51,41 @@ export function Cadastro() {
     }
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+    setRegistrando({
+      mensagem: "Registrando...",
+      status: true,
+    });
 
-    console.log(dadosUsuario);
+    let statusMensagem;
+
+    try {
+      const resposta = await registrarUsuario(dadosUsuario);
+
+      statusMensagem = resposta;
+    } catch (erro) {
+      console.error(erro.message);
+      statusMensagem = erro;
+    } finally {
+      setRegistrando({
+        status: true,
+        mensagem: statusMensagem.message ?? "Dados inválidos",
+      });
+    }
   }
 
   return (
     <div className={styles.container}>
       <h1>Cadastro</h1>
+
+      {registrando.status && (
+        <p
+          style={{ marginBottom: "16px", fontWeight: "bold", fontSize: "18px" }}
+        >
+          {registrando.mensagem}
+        </p>
+      )}
 
       <form onSubmit={handleSubmit}>
         <input
@@ -103,7 +133,6 @@ export function Cadastro() {
               <input
                 placeholder="Cidade"
                 type="text"
-                sssssssss
                 id="cidade"
                 required
                 readOnly
