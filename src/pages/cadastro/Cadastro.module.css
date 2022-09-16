@@ -1,0 +1,17 @@
+.container input {
+  border: 2px solid gray;
+}
+
+.container {
+  height: 600px;
+  margin-bottom: 120px;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container form .endereco {
+  display: flex;
+}
