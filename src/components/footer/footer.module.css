@@ -1,78 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat&family=Montserrat+Alternates:wght@700&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat&family=Montserrat+Alternates:wght@700&display=swap");
 
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 35.938rem;
-    background-image: url('../../assets/footerWave.svg');
-    background-size: cover;
-    color: #000000;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 35.938rem;
+  background-image: url("../../assets/footerWave.svg");
+  background-size: cover;
+  color: #000000;
+  gap: 10px;
 }
 
 .titleFooter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 .titleFooter h1 {
-    font-weight: 700;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 48px;
+  font-weight: 700;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 48px;
 }
 
 .titleFooter p {
-    font-family: 'Inter', sans-serif;
-    margin-top: 10px;
+  font-family: "Inter", sans-serif;
+  margin-top: 10px;
 }
 
 .infoColumns {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 100px 100px 100px 100px;
-    margin-bottom: 40px;
-    column-gap: 200px;
-    width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100px 100px 100px 100px;
+  margin-bottom: 40px;
+  column-gap: 200px;
+  width: 100%;
 }
 
 .infoColumns ul {
-    display: flex;
-    white-space: nowrap;
-    list-style: none;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 17px;
-    margin-bottom: 30px;
-
+  display: flex;
+  white-space: nowrap;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 30px;
 }
 
 .infoColumns li {
-    display: flex;
-    white-space: nowrap;
-    list-style: none;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 15px;
+  display: flex;
+  white-space: nowrap;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 15px;
 }
 
 .copyright {
-    display: flex;
-    white-space: nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+  display: flex;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .copyright p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
 }

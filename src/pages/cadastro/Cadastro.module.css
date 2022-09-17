@@ -1,0 +1,62 @@
+.container {
+  height: auto;
+  max-width: 37.5rem;
+  width: 90%;
+  margin: 4.563rem auto 7.563rem;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.375rem;
+}
+
+.container input {
+  border: 1px solid #5f5d5d;
+  border-radius: 8px;
+  height: 3.25rem;
+  width: 100%;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+}
+
+.container form .infoPessoal {
+  display: flex;
+  gap: 1.938rem;
+}
+
+.container form .endereco .cidade {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.375rem;
+}
+
+.container form .endereco .cidade input:nth-child(2) {
+  width: 4.063rem;
+}
+
+.container form .cpf,
+.email {
+  margin-bottom: 1.375rem;
+}
+
+.container button {
+  padding: 1.25rem 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffc700;
+  cursor: pointer;
+}
+
+@media (max-width: 630px) {
+  .container form .infoPessoal {
+    flex-direction: column;
+  }
+}
