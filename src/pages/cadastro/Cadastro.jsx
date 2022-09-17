@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { registrarUsuario } from "../../services/usuarioApi";
+import { validaDadosDeCadastro } from "../../utils/validaFormulario";
 
 import styles from "./Cadastro.module.css";
 
@@ -33,21 +34,24 @@ export function Cadastro() {
           logradouro,
         },
       });
-
-      document.querySelector("#cep").style.border = " 1px solid #5f5d5d";
     } catch (erro) {
       console.log(erro.message);
-      document.querySelector("#cep").style.border = "1px solid red";
+      setRegistrando({
+        status: true,
+        mensagem: "CEP Inválido",
+      });
     }
   }
 
   function verificaInputsNumericos(event) {
-    const replaced = event.target.value.replace(/[^\d\s.-]/gi, "");
+    const numeros = event.target.value.replace(/[^\d\s.-]/gi, "");
 
     if (event.target.id === "cpf") {
-      setDadosUsuario({ ...dadosUsuario, cpf: replaced });
-    } else {
-      setDadosUsuario({ ...dadosUsuario, cep: replaced });
+      setDadosUsuario({ ...dadosUsuario, cpf: numeros });
+    }
+
+    if (event.target.id === "cep") {
+      setDadosUsuario({ ...dadosUsuario, cep: numeros });
     }
   }
 
@@ -58,19 +62,29 @@ export function Cadastro() {
       status: true,
     });
 
+    const validacao = validaDadosDeCadastro(dadosUsuario);
+
+    if (validacao.erro) {
+      setRegistrando({
+        mensagem: validacao.mensagem,
+        status: true,
+      });
+
+      return;
+    }
+
     let statusMensagem;
 
     try {
       const resposta = await registrarUsuario(dadosUsuario);
 
-      statusMensagem = resposta;
+      statusMensagem = resposta.message;
     } catch (erro) {
-      console.error(erro.message);
       statusMensagem = erro;
     } finally {
       setRegistrando({
         status: true,
-        mensagem: statusMensagem.message ?? "Dados inválidos",
+        mensagem: statusMensagem ?? "Não foi possível cadastrar esse usuário.",
       });
     }
   }

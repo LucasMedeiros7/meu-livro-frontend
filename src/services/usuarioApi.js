@@ -8,6 +8,6 @@ export async function registrarUsuario(dadosUsuario) {
 
     return resposta.data;
   } catch (erro) {
-    return erro.response;
+    return erro.response.data;
   }
 }
