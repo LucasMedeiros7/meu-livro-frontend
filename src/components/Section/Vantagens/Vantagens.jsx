@@ -22,7 +22,7 @@ export const Vantagens = () => {
                 <div className={styles.icons}>
                     <p>Entrega rápida</p>
                     <span className={styles.span}>
-                        <img src="src/assets/caminhao.png" alt="caminhão" width="25%"/>
+                        <img src="src/assets/caminhao.png" alt="caminhão" width="25%" />
                     </span>
                 </div>
 
