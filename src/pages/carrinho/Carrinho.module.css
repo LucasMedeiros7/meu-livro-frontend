@@ -1,0 +1,7 @@
+.carrinhoContainer {
+  border-radius: 8px;
+  margin: 120px auto;
+  padding: 5rem;
+  width: 60vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

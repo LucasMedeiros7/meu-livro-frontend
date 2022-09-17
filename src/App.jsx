@@ -5,13 +5,13 @@ import { CardProduto } from "./components/cardProduto/CardProduto";
 import { Footer } from "./components/footer/footer";
 
 import "./global.css";
+import { Carrinho } from "./pages/carrinho/Carrinho";
 
 export function App() {
   return (
     <div>
       <Header />
-      <Banner />
-      <CardProduto />
+      <Carrinho />
       <Footer />
     </div>
   );
