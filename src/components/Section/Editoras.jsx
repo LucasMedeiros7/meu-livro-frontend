@@ -6,7 +6,7 @@ export const Editoras = () => {
             <h3 className={styles.titulo}>As melhores editoras você encontra aqui!</h3>
             <div className={styles.container}>
                 <span>
-                    <img className={styles.tamanho} src="src/assets/editora-5.jpg" alt="logo da Editora Ciranda Cultural" />
+                    <img className={styles.tamanho} src="src/assets/editora-1.jpg" alt="logo da Editora Rocco" />
                 </span>
                 <span>
                     <img className={styles.tamanho} src="src/assets/editora-2.png" alt="logo da Editora Grupo Autêntica" />
