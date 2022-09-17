@@ -1,4 +1,4 @@
-export function ItenCarrinho({ src, titulo, preco }) {
+export function ItemCarrinho({ src, titulo, preco }) {
   return (
     <div>
       <img width={100} src={src} alt="" />

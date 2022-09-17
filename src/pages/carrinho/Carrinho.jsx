@@ -1,4 +1,4 @@
-import { ItenCarrinho } from "../../components/itenCarinho/ItemCarrinho";
+import { ItemCarrinho } from "../../components/itemCarinho/ItemCarrinho";
 
 import styles from "./Carrinho.module.css";
 export function Carrinho() {
@@ -23,7 +23,7 @@ export function Carrinho() {
 
       {livro.map((item, index) => {
         return (
-          <ItenCarrinho
+          <ItemCarrinho
             key={index}
             src={item.url_img}
             titulo={item.titulo}
