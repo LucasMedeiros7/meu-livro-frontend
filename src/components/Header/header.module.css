@@ -20,8 +20,6 @@
 
 }
 
-
-
 input {
     width: 414px;
     height: 39px;
@@ -57,6 +55,8 @@ input {
     padding-top: 5px;
     font-weight: bold;
     font-size: 11px;
+
+    text-decoration: underline;
 }
 
 .usuario_icon {
