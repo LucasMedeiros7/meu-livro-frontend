@@ -29,20 +29,28 @@ export function Carrinho() {
       ano_publicacao: "2004",
       autor: "Eckhart Tolle",
     },
-    {
-      id_livro: 26,
-      titulo: "Uma Pergunta Por Dia",
-      descricao:
-        "Todos os dias criamos uma imensa quantidade de registros em celulares, redes sociais e aplicativos. No entanto, quase nunca temos o hábito de retornar a eles. Às vezes podem parecer só besteiras, mas quantos desses relatos não mostrariam nosso crescimento e nossas mudanças em todos esses anos? Uma pergunta por dia convida você a registrar suas respostas a uma variedade de questões, das mais simples às mais complicadas, como “Para onde você quer fazer sua próxima viagem?” ou “Escreva a primeira linha da sua autobiografia”. Em cada página há espaço para cinco respostas, uma por ano, ao longo de cinco anos. Com o passar do tempo, quando voltar a um dia já anotado, o dono do diário encontrará seus pensamentos anteriores, num exercício divertido e construtivo de recordar e refletir.Depois das primeiras páginas fica impossível parar, e as possibilidades são infinitas: comece agora mesmo, não importa que dia é hoje; responda sozinho, com o melhor amigo ou com um grupo inteiro de amigos; um casal pode registrar junto suas respostas, cada um em seu livro ou num livro só. Respondendo, relendo, guardando para si ou compartilhando, a brincadeira funciona como uma verdadeira cápsula do tempo – termine um ano, inicie outro e redescubra a cada página um novo eu. Ideal tanto para quem adora diários quanto para aqueles que têm dificuldade em mantê-los, pois inclui propostas de assuntos.erfeito para presentear.",
-      categoria: "autoconhecimento, desenvolvimento pessoal",
-      url_img:
-        "https://images-na.ssl-images-amazon.com/images/I/717O27bAYoL.jpg",
-      preco: "47,90",
-      total_paginas: 368,
-      ano_publicacao: "2015",
-      autor: "Potter Style",
-    },
   ];
+
+  if (!livro.length) {
+    return (
+      <div className={styles.carrinhoContainer}>
+        <h1>Meu carrinho</h1>
+
+        <h2
+          style={{ textAlign: "center", fontWeight: "500", marginTop: "52px" }}
+        >
+          Seu carrinho está vazio :(
+        </h2>
+
+        <div className={styles.botoes}>
+          <button className={styles.btnContinuar} style={{ margin: "0 auto" }}>
+            Voltar para página inicial
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.carrinhoContainer}>
       <h1>Meu carrinho</h1>
@@ -59,11 +67,11 @@ export function Carrinho() {
         );
       })}
 
-      <strong>Total:</strong>
-      <span>R$ 33,90</span>
-      <div>
-        <button>Continuar comprando</button>
-        <button>Concluir compra</button>
+      <p className={styles.total}>Total: R$ 33,90</p>
+
+      <div className={styles.botoes}>
+        <button className={styles.btnContinuar}>Continuar comprando</button>
+        <button className={styles.btnComprar}>Concluir compra</button>
       </div>
     </div>
   );

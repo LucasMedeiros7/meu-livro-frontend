@@ -1,9 +1,8 @@
 .itemCarrinho {
-  position: relative;
   display: flex;
-  gap: 33px;
+  gap: 22px;
   border-bottom: 1px solid #5f5d5d65;
-  padding: 22px;
+  padding: 18px;
   margin-bottom: 22px;
 }
 
@@ -13,9 +12,6 @@
 
 .itemCarrinho button {
   background-color: transparent;
-  align-self: flex-start;
-  display: block;
-  margin-left: auto;
   cursor: pointer;
 }
 
@@ -23,8 +19,15 @@
   stroke: #ed1d24;
 }
 
+.precoEBotao {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  align-self: flex-start;
+  margin-top: -5px;
+  margin-left: auto;
+}
+
 .itemCarrinho .preco {
-  position: absolute;
-  right: 79px;
   font-weight: bold;
 }
