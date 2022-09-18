@@ -8,18 +8,18 @@ import { Vantagens } from "./components/Section/Vantagens/Vantagens";
 import { Footer } from "./components/footer/footer";
 
 import "./global.css";
-import { Cadastro } from "./pages/cadastro/Cadastro";
+import { Login } from "./components/Login/Login";
 
 export function App() {
   return (
     <div>
+      <Header />
       <Banner />
       <Vantagens />
       <CardProduto />
       <Editoras />
       <Novidades />
-      <Header />
-      <Cadastro />
+      <Login />
       <Footer />
     </div>
   );

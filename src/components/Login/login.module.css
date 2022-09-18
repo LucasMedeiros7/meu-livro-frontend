@@ -1,0 +1,53 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.paragrafo {
+    text-align: center;
+    width: 70%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.campo {
+    width: 35rem;
+    height: 3.5rem;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.enviar, .cadastro {
+    height: 3rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.enviar {
+    background-color: rgba(255, 199, 0, 1);
+    width: 35rem;
+}
+
+.enviar:hover {
+    background-color: rgb(242, 199, 44);
+}
+
+.cadastro {
+    background-color: black;
+    color: white;
+    width: 25rem;
+}
+
+.cadastro:hover {
+   color: rgba(255, 199, 0, 1);
+}
