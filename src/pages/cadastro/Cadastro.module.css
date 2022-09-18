@@ -51,6 +51,7 @@
   padding: 1.25rem 0;
   border-radius: 8px;
   font-size: 1rem;
+  font-weight: bold;
   background-color: #ffc700;
   cursor: pointer;
 }
