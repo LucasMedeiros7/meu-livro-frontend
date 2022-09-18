@@ -69,7 +69,7 @@ export const Login = () => {
       <ToastContainer />
 
       <p>Ou, se você ainda não é cliente:</p>
-      <Link to="/cadastro">
+      <Link className={styles.linkCadastro} to="/cadastro">
         <button className={styles.cadastro}>Cadastre-se</button>
       </Link>
     </main>
