@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css"
 export const Login = () => {
     const [dadosUsuario, setDadosUsuario] = useState({email: '', senha: ''}) 
 
+    const navigate = useNavigate()
 
     async function evento(event) {
         event.preventDefault()
@@ -19,6 +20,7 @@ export const Login = () => {
                 position: toast.POSITION.TOP_CENTER
             })
             setDadosUsuario({email: '', senha: ''})
+            navigate("/")
         } else {
             toast.error("Email e/ou senha inválidos", {
                 position: toast.POSITION.TOP_CENTER
