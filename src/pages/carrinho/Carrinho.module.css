@@ -44,13 +44,13 @@
   font-weight: bold;
 }
 
-@media (max-width: 945px) {
+@media (max-width: 990px) {
   .carrinhoContainer {
     width: 80vw;
   }
 }
 
-@media (max-width: 710px) {
+@media (max-width: 790px) {
   .carrinhoContainer {
     display: flex;
     flex-direction: column;

@@ -6,6 +6,14 @@
   margin-bottom: 22px;
 }
 
+.itemCarrinho img {
+  flex: 1;
+}
+
+.tituloEAutor {
+  flex: 3;
+}
+
 .tituloEAutor p {
   margin-top: 12px;
 }
@@ -22,10 +30,10 @@
 .precoEBotao {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 18px;
   align-self: flex-start;
-  margin-top: -5px;
-  margin-left: auto;
+  flex: 2;
 }
 
 .itemCarrinho .preco {
