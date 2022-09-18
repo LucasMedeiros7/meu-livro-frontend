@@ -1,13 +1,15 @@
 import S from "./header.module.css"
 import carrinho_icon from '../../assets/carrinho_icon.png'
 import usuario_icon from '../../assets/usuario_icon.png'
-
+import { Logo } from "./logoHeader.jsx"
 
 export function Header() {
     return (
         <header className={S.box_header}>
+            <div className={S.box_logo}>
+                <Logo />
+            </div>
 
-            <h1>Meu livro</h1>
             <div className={S.box_input}>
                 <input type="text" />
                 <button className={S.lupinha_botao} type="submit" />
