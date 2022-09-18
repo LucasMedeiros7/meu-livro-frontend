@@ -11,9 +11,9 @@ import { Cadastro } from "./pages/cadastro/Cadastro";
 export function App() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Carrinho />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

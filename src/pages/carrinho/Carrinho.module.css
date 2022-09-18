@@ -43,3 +43,30 @@
   font-size: 22px;
   font-weight: bold;
 }
+
+@media (max-width: 945px) {
+  .carrinhoContainer {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 710px) {
+  .carrinhoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .btnContinuar,
+  .btnComprar {
+    padding-inline: 33px;
+  }
+}
