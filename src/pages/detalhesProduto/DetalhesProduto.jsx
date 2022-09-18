@@ -1,7 +1,7 @@
-import styles from "./DetalhesProduto.module.css";
-
-import avaliacaoCliente from "../../assets/avaliação-do-cliente.png";
 import { useState } from "react";
+import avaliacaoCliente from "../../assets/avaliação-do-cliente.png";
+
+import styles from "./DetalhesProduto.module.css";
 
 const livro = {
   id_livro: 20,
