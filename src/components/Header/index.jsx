@@ -2,8 +2,12 @@ import S from "./header.module.css"
 import carrinho_icon from '../../assets/carrinho_icon.png'
 import usuario_icon from '../../assets/usuario_icon.png'
 import { Logo } from "./logoHeader.jsx"
+import { useState } from 'react'
 
 export function Header() {
+    const [entrada, setEntrada] = useState()
+
+
     return (
         <header className={S.box_header}>
             <div className={S.box_logo}>
@@ -11,8 +15,8 @@ export function Header() {
             </div>
 
             <div className={S.box_input}>
-                <input type="text" />
-                <button className={S.lupinha_botao} type="submit" />
+                <input type="text" onChange={(cindy) => setEntrada(cindy.target.value)} />
+                <button className={S.lupinha_botao} onClick={setEntrada} type="submit" />
             </div>
 
             <div className={S.box_icons}>
