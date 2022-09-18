@@ -1,10 +1,30 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
+import { loginUsuario } from "../../services/usuarioApi.js"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 export const Login = () => {
-    function evento(event) {
+    const [dadosUsuario, setDadosUsuario] = useState({email: '', senha: ''}) 
+
+
+    async function evento(event) {
         event.preventDefault()
-    }
+        const resposta = await loginUsuario(dadosUsuario)
+        console.log(resposta)
+
+        if(resposta.message === 'Usuário autorizado') {
+            toast.success("Login efetuado com sucesso", {
+                position: toast.POSITION.TOP_CENTER
+            })
+            setDadosUsuario({email: '', senha: ''})
+        } else {
+            toast.error("Email e/ou senha inválidos", {
+                position: toast.POSITION.TOP_CENTER
+            }) 
+        }
+    };
 
     return (
         <main className={styles.main}>
@@ -12,10 +32,11 @@ export const Login = () => {
             <p className={styles.paragrafo}>Ficamos felizes em ter você por aqui. Entre para prosseguir e tenha acesso a diversos livros e obtenha uma experiência de compra incrível!</p>
 
             <form onSubmit={evento} className={styles.formulario}>
-                <input className={styles.campo} type="email" placeholder="Digite seu email" />
-                <input className={styles.campo} type="password" placeholder="Digite sua senha" />
+                <input onChange={(e) => setDadosUsuario({...dadosUsuario, email: e.target.value})} className={styles.campo} value={dadosUsuario.email} type="email" placeholder="Digite seu email" />
+                <input onChange={(e) => setDadosUsuario({...dadosUsuario, senha: e.target.value})} className={styles.campo} value={dadosUsuario.senha} type="password" placeholder="Digite sua senha" />
                 <button className={styles.enviar} type="submit">Entrar</button>
             </form>
+            <ToastContainer/>
 
             <p>Ou, se você ainda não é cliente:</p>
             <Link to="/cadastro"><button className={styles.cadastro}>Cadastre-se</button></Link>
