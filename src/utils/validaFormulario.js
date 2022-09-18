@@ -31,7 +31,7 @@ export function validaDadosDeCadastro({ email, senha, cpf }) {
   if (!validaCPF(cpf)) {
     return {
       erro: true,
-      mensagem: "CPF deve conter apenas 11 números",
+      mensagem: "CPF deve conter 11 números",
     };
   }
 

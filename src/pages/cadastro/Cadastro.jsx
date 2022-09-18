@@ -2,13 +2,12 @@ import { useState } from "react";
 import { registrarUsuario } from "../../services/usuarioApi";
 import { validaDadosDeCadastro } from "../../utils/validaFormulario";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import styles from "./Cadastro.module.css";
 
 export function Cadastro() {
-  const [registrando, setRegistrando] = useState({
-    status: false,
-    mensagem: "",
-  });
   const [dadosUsuario, setDadosUsuario] = useState({
     nome: "",
     email: "",
@@ -17,6 +16,16 @@ export function Cadastro() {
     cep: "",
     endereco: { localidade: "", uf: "", logradouro: "" },
   });
+
+  const toastAlertErro = (mensagem) =>
+    toast.error(mensagem, {
+      position: toast.POSITION.TOP_CENTER,
+    });
+
+  const toastAlertSucesso = (mensagem) =>
+    toast.success(mensagem, {
+      position: toast.POSITION.TOP_CENTER,
+    });
 
   async function buscaCep(event) {
     try {
@@ -35,11 +44,7 @@ export function Cadastro() {
         },
       });
     } catch (erro) {
-      console.log(erro.message);
-      setRegistrando({
-        status: true,
-        mensagem: "CEP Inválido",
-      });
+      toastAlertErro("Insira um CEP válido");
     }
   }
 
@@ -57,49 +62,30 @@ export function Cadastro() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setRegistrando({
-      mensagem: "Registrando...",
-      status: true,
-    });
 
     const validacao = validaDadosDeCadastro(dadosUsuario);
 
     if (validacao.erro) {
-      setRegistrando({
-        mensagem: validacao.mensagem,
-        status: true,
-      });
-
+      toastAlertErro(validacao.mensagem);
       return;
     }
 
-    let statusMensagem;
+    const resposta = await toast.promise(registrarUsuario(dadosUsuario), {
+      position: toast.POSITION.BOTTOM_CENTER,
+      pending: "Cadastrando usuário no banco de dados",
+      error: "Erro ao acessar o banco de dados",
+    });
 
-    try {
-      const resposta = await registrarUsuario(dadosUsuario);
-
-      statusMensagem = resposta.message;
-    } catch (erro) {
-      statusMensagem = erro;
-    } finally {
-      setRegistrando({
-        status: true,
-        mensagem: statusMensagem ?? "Não foi possível cadastrar esse usuário.",
-      });
+    if (resposta.message.includes("repetido")) {
+      toastAlertErro("Email já cadastrado no banco de dados");
+    } else {
+      toastAlertSucesso("Cadastro efetuado com sucesso");
     }
   }
 
   return (
     <div className={styles.container}>
       <h1>Cadastro</h1>
-
-      {registrando.status && (
-        <p
-          style={{ marginBottom: "16px", fontWeight: "bold", fontSize: "18px" }}
-        >
-          {registrando.mensagem}
-        </p>
-      )}
 
       <form onSubmit={handleSubmit}>
         <input
@@ -188,8 +174,12 @@ export function Cadastro() {
           />
         </div>
 
-        <button type="submit">Finalizar cadastro</button>
+        <button className={styles.btn} type="submit">
+          Finalizar cadastro
+        </button>
       </form>
+
+      <ToastContainer />
     </div>
   );
 }
