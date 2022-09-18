@@ -1,0 +1,30 @@
+.itemCarrinho {
+  position: relative;
+  display: flex;
+  gap: 33px;
+  border-bottom: 1px solid #5f5d5d65;
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+.tituloEAutor p {
+  margin-top: 12px;
+}
+
+.itemCarrinho button {
+  background-color: transparent;
+  align-self: flex-start;
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.itemCarrinho button:hover > svg line {
+  stroke: #ed1d24;
+}
+
+.itemCarrinho .preco {
+  position: absolute;
+  right: 79px;
+  font-weight: bold;
+}
