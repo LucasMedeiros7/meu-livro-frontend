@@ -1,0 +1,25 @@
+.section {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+}
+
+.tamanho {
+    width: 80%;
+    height: 65%;
+}
