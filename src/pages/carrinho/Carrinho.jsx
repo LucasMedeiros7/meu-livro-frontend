@@ -1,13 +1,34 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { ItemCarrinho } from "../../components/itemCarinho/ItemCarrinho";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
-
+import { loginContext } from "../../contexts/loginContext";
+import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import styles from "./Carrinho.module.css";
 
 export function Carrinho() {
-  const { carrinho, totalDoCarrinho } = useContext(carrinhoContext);
+  const { carrinho, totalDoCarrinho, checkoutCarrinho } =
+    useContext(carrinhoContext);
+  const { logado } = useContext(loginContext);
+  const navigate = useNavigate();
+
+  function checkout() {
+    if (logado) {
+      toast.success("Compra efetuada com sucesso", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      checkoutCarrinho();
+      navigate("/");
+    } else {
+      toast.error("Faça login para prosseguir com a compra", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+
+      navigate("/login");
+    }
+  }
 
   if (!carrinho.length) {
     return (
@@ -44,8 +65,12 @@ export function Carrinho() {
       <p className={styles.total}>Total: {totalDoCarrinho()}</p>
 
       <div className={styles.botoes}>
-        <button className={styles.btnContinuar}>Continuar comprando</button>
-        <button className={styles.btnComprar}>Concluir compra</button>
+        <Link className={styles.btnContinuar} to="/">
+          Continuar comprando
+        </Link>
+        <button className={styles.btnComprar} onClick={checkout}>
+          Concluir compra
+        </button>
       </div>
     </div>
   );

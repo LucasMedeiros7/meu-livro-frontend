@@ -59,10 +59,15 @@ export function CarrinhoProvider({ children }) {
     setCarrinho([...carrinho]);
   }
 
+  function checkoutCarrinho() {
+    setCarrinho([]);
+  }
+
   return (
     <carrinhoContext.Provider
       value={{
         carrinho,
+        checkoutCarrinho,
         adicionaNoCarrinho,
         removeDoCarrinho,
         totalDoCarrinho,
