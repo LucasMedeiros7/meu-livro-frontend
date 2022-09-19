@@ -31,11 +31,12 @@
   font-size: 1rem;
   background-color: #ffc700;
   cursor: pointer;
-
+  text-align: center;
   transition: 0.2s;
 }
 
-.botoes button:hover {
+.btnContinuar:hover,
+.btnComprar:hover {
   background-color: #e0bb32;
   transform: scale(1.04);
 }

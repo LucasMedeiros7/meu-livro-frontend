@@ -13,14 +13,14 @@ export function ItemCarrinho({ produto }) {
 
   return (
     <div className={styles.itemCarrinho}>
-      <img src={src} alt="Capa do livro" />
+      <img src={livro.url_img} alt="Capa do livro" />
 
       <div className={styles.tituloEAutor}>
         <strong>{livro.titulo}</strong>
         <p>{livro.autor}</p>
       </div>
 
-      <input type="viewBox" value={quantidade} />
+      <input type="viewBox" value={produto.quantidade} />
       <button
         disabled={decrementaDesabilitado}
         onClick={() => decrementaCarrinho(id)}
@@ -39,7 +39,7 @@ export function ItemCarrinho({ produto }) {
         <p className={styles.preco}>R$ {livro.preco}</p>
         <button
           className={styles.btnDelete}
-          onClick={() => removeDoCarrinho(id)}
+          onClick={() => removeDoCarrinho(livro.id_livro)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
