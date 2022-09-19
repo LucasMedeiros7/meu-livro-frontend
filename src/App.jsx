@@ -11,6 +11,7 @@ import { Login } from "./pages/Login/Login";
 import { Header } from "./components/Header";
 import { Footer } from "./components/footer/footer";
 import { LoginProvider } from "./contexts/loginContext";
+import { ToastContainer } from "react-toastify";
 
 export function App() {
   return (
@@ -24,6 +25,7 @@ export function App() {
             <Route path="/login" element={<Login />} />
           </Routes>
           <Footer />
+          <ToastContainer />
         </LoginProvider>
       </Router>
     </div>
