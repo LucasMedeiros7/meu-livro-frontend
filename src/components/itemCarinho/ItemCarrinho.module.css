@@ -19,12 +19,12 @@
   margin-top: 12px;
 }
 
-.itemCarrinho button {
+.itemCarrinho .btnDelete {
   background-color: transparent;
   cursor: pointer;
 }
 
-.itemCarrinho button:hover > svg line {
+.itemCarrinho .btnDelete:hover svg line {
   stroke: #ed1d24;
 }
 

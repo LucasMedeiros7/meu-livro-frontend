@@ -6,18 +6,20 @@ export function CarrinhoProvider({ children }) {
   const [carrinho, setCarrinho] = useState([]);
 
   function adicionaNoCarrinho(livro) {
-    const item = carrinho.find(({ item }) => item?.id_livro === livro.id_livro);
+    const produto = carrinho.find(
+      ({ item }) => item?.id_livro === livro.id_livro
+    );
 
-    if (item) {
-      item.quantidade++;
+    if (produto) {
+      produto.quantidade++;
       setCarrinho([...carrinho]);
     } else {
-      const produto = {
+      const novoProduto = {
         item: livro,
         quantidade: 1,
       };
 
-      setCarrinho([...carrinho, produto]);
+      setCarrinho([...carrinho, novoProduto]);
     }
   }
 
