@@ -26,6 +26,7 @@ input {
   box-shadow: 0 0 0 0;
   outline: 0;
   border-radius: 8px;
+  padding-left: 15px;
 }
 
 .lupinha_botao {
