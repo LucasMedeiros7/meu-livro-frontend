@@ -1,32 +1,46 @@
+import React, { useEffect, useState } from "react";
+import api from '../../services/api';
 import './CardProduto.css'
 
 export function CardProduto() {
+  const [book, setBook] = useState();
+
+  useEffect(() => {
+    api
+      .get("/livros")
+      .then((response) => setBook(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+
   return (
-
-    // coloquei textos genericos apenas para visualização temporária
-    
-    <div className="mainCardProduto">
-      <div className="containerInterno">
+    <section className="mainCardProduto" >
         <h2>Livros</h2>
+      {/* <div className="container">
+      </div> */}
 
-        <div className="cardProduto">
-          <div className="imgProduto">
-            <img src="" alt="livro de star wars" />
-          </div>
+      <div className="container">
+        {book?.map((item, index) => (
+        <div className="containerInterno" key={index}>
+          <div className="cardProduto">
+            <div className="imgProduto">
+              <img src={item?.url_img} target='_blank'/>
+            </div>
 
-          <div className="infoProduto">
-            <strong><p>nome livro</p></strong>
-            <p>Capa dura</p>
-            <strong><p>R$ 34,99</p></strong>
-            <p>ou 2x de R$ 17,49</p>
-            <p>Frete Grátis em alguns</p>
-          </div>
+            <div className="infoProduto">
+              <strong><p id="titulo">{item?.titulo}</p></strong>
+              <p id="preco">R$ {item?.preco}</p>
+            </div>
 
-          <div className="btnComprar">
-            <button><strong>Comprar</strong></button>
+            <div className="btnComprar">
+              <button><strong>Comprar</strong></button>
+            </div>
           </div>
         </div>
+      ))}
       </div>
-    </div>
+
+    </section>
   );
 }
