@@ -6,12 +6,14 @@ import { loginContext } from "../../contexts/loginContext";
 import { Logo } from "./logoHeader.jsx";
 
 import S from "./header.module.css";
-import carrinho_icon from "../../assets/carrinho_icon.png";
 import usuario_icon from "../../assets/usuario_icon.png";
+import { ShoppingCart } from "phosphor-react";
+import { carrinhoContext } from "../../contexts/carrinhoContext";
 
 export function Header() {
   const { logado, useLocalStorage, logoutLocalStorage } =
     useContext(loginContext);
+  const { carrinho } = useContext(carrinhoContext);
 
   const entrarOuSair = () => {
     const usuarioLogado = useLocalStorage();
@@ -61,11 +63,16 @@ export function Header() {
         </div>
 
         <Link to="/carrinho">
-          <img
+          {/* <img
             className={S.carrinho_icon}
             src={carrinho_icon}
             alt="icone do carrinho"
-          />
+          /> */}
+
+          <div className={S.quantidadeCarrinho}>
+            <ShoppingCart className={S.carrinho_icon} />
+            {carrinho.length ? <span>{carrinho.length}</span> : ""}
+          </div>
         </Link>
       </div>
     </header>

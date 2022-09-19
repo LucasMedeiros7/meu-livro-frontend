@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
+import { X } from "phosphor-react";
 
 import styles from "./ItemCarrinho.module.css";
 
@@ -18,22 +19,29 @@ export function ItemCarrinho({ produto }) {
       <div className={styles.tituloEAutor}>
         <strong>{livro.titulo}</strong>
         <p>{livro.autor}</p>
-      </div>
 
-      <input type="viewBox" value={produto.quantidade} />
-      <button
-        disabled={decrementaDesabilitado}
-        onClick={() => decrementaCarrinho(id)}
-        className={styles.quantidadeCarrinho}
-      >
-        -
-      </button>
-      <button
-        onClick={() => incrementaCarrinho(id)}
-        className={styles.quantidadeCarrinho}
-      >
-        +
-      </button>
+        <div className={styles.quantidadeCarrinho}>
+          <button
+            disabled={decrementaDesabilitado}
+            onClick={() => decrementaCarrinho(livro.id_livro)}
+            className={styles.btnQuantidadeCarrinho}
+          >
+            -
+          </button>
+          <input
+            readOnly
+            type="viewBox"
+            value={produto.quantidade}
+            className={styles.contadorQuantidade}
+          />
+          <button
+            onClick={() => incrementaCarrinho(livro.id_livro)}
+            className={styles.btnQuantidadeCarrinho}
+          >
+            +
+          </button>
+        </div>
+      </div>
 
       <div className={styles.precoEBotao}>
         <p className={styles.preco}>R$ {livro.preco}</p>
@@ -41,35 +49,7 @@ export function ItemCarrinho({ produto }) {
           className={styles.btnDelete}
           onClick={() => removeDoCarrinho(livro.id_livro)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            fill="#000000"
-            viewBox="0 0 256 256"
-          >
-            <rect width="256" height="256" fill="none"></rect>
-            <line
-              x1="200"
-              y1="56"
-              x2="56"
-              y2="200"
-              stroke="#000000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            ></line>
-            <line
-              x1="200"
-              y1="200"
-              x2="56"
-              y2="56"
-              stroke="#000000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            ></line>
-          </svg>
+          <X size={28} />
         </button>
       </div>
     </div>

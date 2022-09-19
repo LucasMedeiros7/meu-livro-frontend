@@ -1,14 +1,15 @@
 .itemCarrinho {
   display: flex;
-  gap: 25px;
+  gap: 1.563rem;
   border-bottom: 1px solid #5f5d5d65;
-  padding: 18px;
-  margin-bottom: 22px;
+  padding: 1.125rem;
+  margin-bottom: 1.375rem;
 }
 
 .itemCarrinho img {
   width: 5rem;
-  flex: 0.7;
+  flex: 1;
+  height: min-content;
 }
 
 .tituloEAutor {
@@ -39,4 +40,29 @@
 
 .itemCarrinho .preco {
   font-weight: bold;
+}
+
+.quantidadeCarrinho {
+  display: flex;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.contadorQuantidade {
+  width: 26px;
+  border-radius: 5px;
+  height: fit-content;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btnQuantidadeCarrinho {
+  width: 32px;
+  border-radius: 8px;
+  background-color: #ffc700;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
 }
