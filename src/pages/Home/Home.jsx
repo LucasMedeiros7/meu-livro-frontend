@@ -5,13 +5,13 @@ import { Novidades } from "../../components/Section/Novidades/Novidades.jsx";
 import { Vantagens } from "../../components/Section/Vantagens/Vantagens.jsx";
 
 export const Home = () => {
-    return (
-        <div>
-            <Banner />
-            <CardProduto />
-            <Editoras />
-            <Novidades />
-            <Vantagens />
-        </div>
-    )
+  return (
+    <div>
+      <Banner />
+      <CardProduto />
+      <Editoras />
+      <Novidades />
+      <Vantagens />
+    </div>
+  )
 }
