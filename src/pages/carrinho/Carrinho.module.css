@@ -1,6 +1,6 @@
 .carrinhoContainer {
   border-radius: 8px;
-  margin: 120px auto;
+  margin: 48px auto 120px;
   padding: 5rem;
   width: 60vw;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -8,8 +8,11 @@
 
 .carrinhoContainer h1 {
   margin-top: -22px;
-  margin-bottom: 22px;
-  margin-left: -16px;
+  margin-bottom: 50px;
+  padding: 0 12px 4px;
+  border-bottom: 3px solid #ffc700;
+  border-radius: 22px;
+  width: fit-content;
 }
 
 .botoes {
@@ -62,11 +65,14 @@
   .botoes {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 22px;
   }
 
   .btnContinuar,
   .btnComprar {
-    padding-inline: 33px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
   }
 }

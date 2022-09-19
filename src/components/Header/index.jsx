@@ -60,11 +60,13 @@ export function Header() {
           <p className={S.texto_usuario}>{entrarOuSair()}</p>
         </div>
 
-        <img
-          className={S.carrinho_icon}
-          src={carrinho_icon}
-          alt="icone do carrinho"
-        />
+        <Link to="/carrinho">
+          <img
+            className={S.carrinho_icon}
+            src={carrinho_icon}
+            alt="icone do carrinho"
+          />
+        </Link>
       </div>
     </header>
   );
