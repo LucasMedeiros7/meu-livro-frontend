@@ -1,0 +1,71 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4.563rem auto 7.563rem;
+}
+
+.main h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.paragrafo {
+  text-align: center;
+  max-width: 580px;
+  width: 100%;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.campo {
+  max-width: 35rem;
+  width: 90%;
+  height: 3.5rem;
+  border: 2px solid gray;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.enviar,
+.cadastro {
+  max-width: 35rem;
+  width: 90%;
+  height: 3rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.enviar {
+  background-color: rgba(255, 199, 0, 1);
+}
+
+.enviar:hover {
+  background-color: rgb(242, 199, 44);
+}
+
+.cadastro {
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+}
+
+.cadastro:hover {
+  color: rgba(255, 199, 0, 1);
+}
+
+.linkCadastro {
+  display: flex;
+  max-width: 35rem;
+  width: 100%;
+}
