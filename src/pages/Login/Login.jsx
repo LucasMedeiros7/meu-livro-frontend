@@ -1,16 +1,17 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "./login.module.css";
 import { loginContext } from "../../contexts/loginContext";
 import { loginUsuario } from "../../services/usuarioApi.js";
 
-import { ToastContainer, toast } from "react-toastify";
+import styles from "./login.module.css";
+
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const Login = () => {
   const [dadosUsuario, setDadosUsuario] = useState({ email: "", senha: "" });
-  const navigate = useNavigate();
   const { loginLocalStorage } = useContext(loginContext);
+  const navigate = useNavigate();
 
   async function evento(event) {
     event.preventDefault();
@@ -23,7 +24,7 @@ export const Login = () => {
 
       setDadosUsuario({ email: "", senha: "" });
       loginLocalStorage(resposta.usuario);
-      setTimeout(() => navigate("/"), 2000);
+      navigate("/");
     } else {
       toast.error("Email e/ou senha inválidos", {
         position: toast.POSITION.TOP_CENTER,
@@ -65,8 +66,6 @@ export const Login = () => {
           Entrar
         </button>
       </form>
-
-      <ToastContainer />
 
       <p>Ou, se você ainda não é cliente:</p>
       <Link className={styles.linkCadastro} to="/cadastro">

@@ -8,10 +8,10 @@ export const Home = () => {
   return (
     <div>
       <Banner />
+      <Vantagens />
       <CardProduto />
       <Editoras />
       <Novidades />
-      <Vantagens />
     </div>
-  )
-}
+  );
+};

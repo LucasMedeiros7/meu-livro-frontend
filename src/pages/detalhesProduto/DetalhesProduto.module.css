@@ -12,11 +12,13 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-bottom: 7.5rem;
 }
 
 .detalhesProduto h1 {
   font-size: 2.5rem;
   font-weight: 500;
+  margin-left: -2rem;
 }
 
 .detalhesProduto .precoProduto p:nth-child(1) {

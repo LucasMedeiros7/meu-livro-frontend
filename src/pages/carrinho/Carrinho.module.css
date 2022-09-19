@@ -1,0 +1,79 @@
+.carrinhoContainer {
+  border-radius: 8px;
+  margin: 48px auto 120px;
+  padding: 5rem;
+  width: 60vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.carrinhoContainer h1 {
+  margin-top: -22px;
+  margin-bottom: 50px;
+  padding: 0 12px 4px;
+  border-bottom: 3px solid #ffc700;
+  border-radius: 22px;
+  width: fit-content;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 52px;
+  gap: 40px;
+}
+
+.btnContinuar,
+.btnComprar {
+  padding: 1.25rem 0;
+  max-width: 306px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffc700;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.btnContinuar:hover,
+.btnComprar:hover {
+  background-color: #e0bb32;
+  transform: scale(1.04);
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media (max-width: 990px) {
+  .carrinhoContainer {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 790px) {
+  .carrinhoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .botoes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 22px;
+  }
+
+  .btnContinuar,
+  .btnComprar {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
