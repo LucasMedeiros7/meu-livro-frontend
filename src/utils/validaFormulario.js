@@ -9,7 +9,6 @@ const validaCPF = (CPF) => {
   if (CPFatualizado.length !== 11 && !/[A-Z]/gi.test(CPFatualizado)) {
     return false;
   }
-
   return CPFatualizado;
 };
 
@@ -34,6 +33,5 @@ export function validaDadosDeCadastro({ email, senha, cpf }) {
       mensagem: "CPF deve conter 11 números",
     };
   }
-
   return true;
-}
+};

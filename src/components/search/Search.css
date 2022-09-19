@@ -1,0 +1,11 @@
+.search {
+  display: flex;
+  align-items: center;
+}
+.campoInput {
+  width: 415px;
+  height: 40px;
+  padding: 5px;
+  background: white;
+  border-radius: 10px 10px 10px 10px;
+}

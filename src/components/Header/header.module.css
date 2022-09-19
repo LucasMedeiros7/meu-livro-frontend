@@ -5,7 +5,9 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 16px;
+
   background-color: #ffc700;
+
   position: sticky;
   top: 0;
 }
@@ -53,6 +55,7 @@ input {
   padding-top: 5px;
   font-weight: bold;
   font-size: 11px;
+  text-decoration: underline;
 }
 
 .usuario_icon {
