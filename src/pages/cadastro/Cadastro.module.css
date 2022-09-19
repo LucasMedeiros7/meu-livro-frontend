@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.container h1 {
+.container h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.375rem;
@@ -54,6 +54,10 @@
   font-weight: bold;
   background-color: #ffc700;
   cursor: pointer;
+}
+
+.container .btn:hover {
+  color: #3b3b3b;
 }
 
 @media (max-width: 630px) {
