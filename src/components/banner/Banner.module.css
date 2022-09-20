@@ -1,3 +1,7 @@
+.banner * {
+  color: #fff;
+}
+
 .banner {
   position: relative;
   z-index: -2;
@@ -9,7 +13,6 @@
 
   background-color: #ffc700;
   font-family: sans-serif;
-  color: #ffffff;
 }
 
 .imgBanner {
