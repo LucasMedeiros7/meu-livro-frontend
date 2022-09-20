@@ -16,27 +16,25 @@ import { Pesquisa } from "../../pages/pesquisa/Pesquisa";
 
 
 export function Header(props) {
-    const { setBook } = props
     const [digitado, setDigitado] = useState('')
     const { logado, useLocalStorage, logoutLocalStorage } =
         useContext(loginContext);
     const { carrinho } = useContext(carrinhoContext);
     const navigate = useNavigate()
 
-    async function buscarLivro(pesquisa) {
-
+    async function handleClick(pesquisa) {
         api
             .get("/livros")
             .then((response) => {
                 const resultadoPesquisa = response.data.filter(livro => livro.titulo.toLowerCase().includes(pesquisa.toLowerCase()))
                 navigate("/pesquisa", { state: resultadoPesquisa })
-
             })
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
                 // pode ser a chamada de uma tela 404
             });
 
+        props.setPesquisado(pesquisa)
     }
 
 
@@ -76,7 +74,7 @@ export function Header(props) {
             <div className={S.box_input}>
                 <input type="text" onChange={(e) => setDigitado(e.target.value)} />
 
-                <button onClick={() => buscarLivro(digitado)} className={S.lupinha_botao} type="submit" />
+                <button onClick={() => handleClick(digitado)} className={S.lupinha_botao} type="submit" />
             </div>
 
             <div className={S.box_icons}>
