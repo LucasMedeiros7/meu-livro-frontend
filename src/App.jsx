@@ -7,12 +7,14 @@ import "./global.css";
 import { Home } from "./pages/Home/Home.jsx";
 import { Cadastro } from "./pages/cadastro/Cadastro";
 import { Login } from "./pages/Login/Login";
-import { Header } from "./components/Header";
-import { Footer } from "./components/footer/footer";
+import { Header } from "./components/Header/index";
+import { Footer } from "./components/Footer/Footer";
 import { LoginProvider } from "./contexts/loginContext";
-import { ToastContainer } from "react-toastify";
 import { Carrinho } from "./pages/carrinho/Carrinho";
 import { CarrinhoProvider } from "./contexts/carrinhoContext";
+
+import { ToastContainer } from "react-toastify";
+import { DetalhesProduto } from "./pages/detalhesProduto/DetalhesProduto";
 
 export function App() {
   return (
@@ -26,6 +28,7 @@ export function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/carrinho" element={<Carrinho />} />
+              <Route path="/detalhes/:id" element={<DetalhesProduto />} />
             </Routes>
             <Footer />
             <ToastContainer />

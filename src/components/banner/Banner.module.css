@@ -16,7 +16,7 @@
   position: absolute;
   left: 33%;
   bottom: -0.2px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .banner h1 {
@@ -24,7 +24,7 @@
   font-weight: 700;
   max-width: 30rem;
   width: 100%;
-  margin-top: 3.125rem;
+  margin-top: 2.5rem;
 }
 
 .anuncioDesconto {
@@ -68,8 +68,6 @@
 .livrosDesconto {
   position: relative;
   display: flex;
-  gap: 2.125rem;
-
   width: 28.875rem;
 }
 
