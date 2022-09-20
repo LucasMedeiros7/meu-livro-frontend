@@ -8,7 +8,7 @@ import { Home } from "./pages/Home/Home.jsx";
 import { Cadastro } from "./pages/cadastro/Cadastro";
 import { Login } from "./pages/Login/Login";
 import { Header } from "./components/Header/index";
-import { Footer } from "./components/Footer/footer";
+import { Footer } from "./components/footer/footer";
 import { LoginProvider } from "./contexts/loginContext";
 import { Carrinho } from "./pages/carrinho/Carrinho";
 import { CarrinhoProvider } from "./contexts/carrinhoContext";
