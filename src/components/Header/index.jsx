@@ -6,9 +6,12 @@ import { loginContext } from "../../contexts/loginContext";
 import { Logo } from "./logoHeader.jsx";
 
 import S from "./header.module.css";
-import carrinho_icon from "../../assets/carrinho_icon.png";
 import usuario_icon from "../../assets/usuario_icon.png";
+
+import { ShoppingCart } from "phosphor-react";
+import { carrinhoContext } from "../../contexts/carrinhoContext";
 import api from '../../services/api';
+
 
 
 export function Header(props) {
@@ -16,6 +19,7 @@ export function Header(props) {
     const [digitado, setDigitado] = useState('')
     const { logado, useLocalStorage, logoutLocalStorage } =
         useContext(loginContext);
+    const { carrinho } = useContext(carrinhoContext);
 
     async function buscarLivro(pesquisa) {
 
@@ -83,12 +87,15 @@ export function Header(props) {
                     <p className={S.texto_usuario}>{entrarOuSair()}</p>
                 </div>
 
-                <img
-                    className={S.carrinho_icon}
-                    src={carrinho_icon}
-                    alt="icone do carrinho"
-                />
+                <Link to="/carrinho">
+
+                    <div className={S.quantidadeCarrinho}>
+                        <ShoppingCart className={S.carrinho_icon} />
+                        {carrinho.length ? <span>{carrinho.length}</span> : ""}
+                    </div>
+                </Link>
             </div>
         </header>
     );
-}
+
+}  

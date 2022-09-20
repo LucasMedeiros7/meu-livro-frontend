@@ -1,11 +1,15 @@
-import React, { useEffect, useState, useRef } from "react";
-import setas from '../../assets/seta_icon.png'
-import api from '../../services/api';
-import './CardProduto.css'
+import React, { useEffect, useState, useRef, useContext } from "react";
+import { carrinhoContext } from "../../contexts/carrinhoContext";
+
+import setas from "../../assets/seta_icon.png";
+
+import api from "../../services/api";
+import "./CardProduto.css";
 
 export function CardProduto(props) {
   const { book, setBook } = props
   const carousel = useRef(null);
+  const { adicionaNoCarrinho } = useContext(carrinhoContext);
 
   useEffect(() => {
     api
@@ -13,7 +17,6 @@ export function CardProduto(props) {
       .then((response) => setBook(response.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
-        // pode ser a chamada de uma tela 404
       });
   }, []);
 
@@ -38,7 +41,7 @@ export function CardProduto(props) {
       </div>
 
       <div className="conteinerProdutos">
-        <h2>Livros</h2>
+        <h2>Conheça nosso catálogo de livros</h2>
 
         <div className="carrossel" ref={carousel}>
           {book?.map((item, index) => {
@@ -49,15 +52,18 @@ export function CardProduto(props) {
                 </div>
 
                 <div className="infoProduto">
-                  <strong><p id="titulo">{item?.titulo}</p></strong>
+                  <strong>
+                    <p id="titulo">{item?.titulo}</p>
+                  </strong>
                   <p id="preco">R$ {item?.preco}</p>
                 </div>
 
                 <div className="btnComprar">
-                  <button><strong>Comprar</strong></button>
+                  <button onClick={() => adicionaNoCarrinho(item)}>
+                    <strong>Adicionar ao carrinho</strong>
+                  </button>
                 </div>
               </div>
-
             );
           })}
         </div>
@@ -71,24 +77,3 @@ export function CardProduto(props) {
     </section>
   );
 }
-
-{/* <div className="items">
-            {book?.map((item, index) => (
-              // <div className="containerInterno" >
-                <div className="cardProduto" key={index}>
-                  <div className="imgProduto">
-                    <img src={item?.url_img} target='_blank'/>
-                  </div>
-
-                  <div className="infoProduto">
-                    <strong><p id="titulo">{item?.titulo}</p></strong>
-                    <p id="preco">R$ {item?.preco}</p>
-                  </div>
-
-                  <div className="btnComprar">
-                    <button><strong>Comprar</strong></button>
-                  </div>
-                </div>
-            // </div>
-            ))}
-          </div> */}
