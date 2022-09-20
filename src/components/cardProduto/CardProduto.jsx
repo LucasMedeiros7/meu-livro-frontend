@@ -6,8 +6,8 @@ import setas from "../../assets/seta_icon.png";
 import api from "../../services/api";
 import "./CardProduto.css";
 
-export function CardProduto() {
-  const [book, setBook] = useState([]);
+export function CardProduto(props) {
+  const { book, setBook } = props
   const carousel = useRef(null);
   const { adicionaNoCarrinho } = useContext(carrinhoContext);
 

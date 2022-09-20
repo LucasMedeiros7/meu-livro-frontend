@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -15,20 +15,25 @@ import { CarrinhoProvider } from "./contexts/carrinhoContext";
 
 import { ToastContainer } from "react-toastify";
 import { DetalhesProduto } from "./pages/detalhesProduto/DetalhesProduto";
+import { Pesquisa } from "./pages/pesquisa/Pesquisa";
 
 export function App() {
+  const [book, setBook] = useState([]);
+  const [pesquisado, setPesquisado] = useState('')
+
   return (
     <div>
       <BrowserRouter>
         <LoginProvider>
           <CarrinhoProvider>
-            <Header />
+            <Header setBook={setBook} setPesquisado={setPesquisado} />
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home setBook={setBook} book={book} />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/carrinho" element={<Carrinho />} />
               <Route path="/detalhes/:id" element={<DetalhesProduto />} />
+              <Route path="/pesquisa" element={<Pesquisa pesquisado={pesquisado} />} />
             </Routes>
             <Footer />
             <ToastContainer />
