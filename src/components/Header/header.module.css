@@ -5,10 +5,13 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 16px;
-  background-color: #FFC700;
+
+  background-color: #ffc700;
+
   position: sticky;
   top: 0;
 }
+
 .box_input {
   height: 42px;
   background-color: white;
@@ -16,6 +19,29 @@
   align-items: center;
   border-radius: 8px;
 }
+
+input {
+  width: 414px;
+  height: 39px;
+  border: none;
+  border: none;
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  border-radius: 8px;
+}
+
+.lupinha_botao {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../assets/lupinha_icon.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.3em;
+  padding-right: 40px;
+  margin: 0px;
+}
+
 .box_icons {
   width: 220px;
   height: 50px;
@@ -24,32 +50,44 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
 .texto_usuario {
   padding-top: 5px;
   font-weight: bold;
   font-size: 11px;
   text-decoration: underline;
 }
+
 .usuario_icon {
   width: 49px;
   height: 40px;
   padding-right: 8px;
 }
+
 .carrinho_icon {
   width: 40px;
   height: 40px;
 }
+
 .logo {
   padding-left: 3.5rem;
   display: flex;
 }
+
 .imagem_logo {
   width: 50px;
   height: 50px;
   cursor: pointer;
 }
+
 .texto_logo {
   padding-top: 5px;
   padding-left: 1rem;
+<<<<<<< HEAD
   white-space: nowrap
 }
+=======
+  font-family: "Montserrat";
+  white-space: nowrap;
+}
+>>>>>>> 969f406385547d6b26707d477a5b7a2e06ddd853

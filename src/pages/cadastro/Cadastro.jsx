@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { registrarUsuario } from "../../services/usuarioApi";
 import { validaDadosDeCadastro } from "../../utils/validaFormulario";
 
@@ -8,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import styles from "./Cadastro.module.css";
 
 export function Cadastro() {
+  const navigate = useNavigate();
   const [dadosUsuario, setDadosUsuario] = useState({
     nome: "",
     email: "",
@@ -77,15 +79,18 @@ export function Cadastro() {
     });
 
     if (resposta.message.includes("repetido")) {
-      toastAlertErro("Email já cadastrado no banco de dados");
+      toastAlertErro("Este email já está cadastrado");
     } else {
       toastAlertSucesso("Cadastro efetuado com sucesso");
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     }
   }
 
   return (
     <div className={styles.container}>
-      <h1>Cadastro</h1>
+      <h2>Cadastro</h2>
 
       <form onSubmit={handleSubmit}>
         <input
