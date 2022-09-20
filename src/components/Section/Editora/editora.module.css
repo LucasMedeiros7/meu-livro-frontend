@@ -14,7 +14,7 @@
   justify-content: center;
   gap: 8rem;
 
-  max-width: 900px;
+  max-width: 1080px;
   width: 100%;
   margin: 0 auto;
 }
@@ -22,13 +22,14 @@
 .container img {
   margin: 0 auto;
   width: 100%;
-  height: fit-content;
+  height: auto;
 }
 
 @media (max-width: 1200px) {
   .container {
     grid-template-columns: 1fr 1fr;
     gap: 0;
+    max-width: 900px;
   }
 
   .container img {

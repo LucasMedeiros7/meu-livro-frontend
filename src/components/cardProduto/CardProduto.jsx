@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import setas from "../../assets/seta_icon.png";
 
 import api from "../../services/api";
@@ -47,9 +47,6 @@ export function CardProduto() {
           {book?.map((item, index) => {
             return (
               <div className="items" key={index}>
-                <div className="imgProduto">
-                  <img src={item?.url_img} target='_blank' />
-                </div>
                 <Link to={`/detalhes/${item.id_livro}`}>
                   <div className="imgProduto">
                     <img src={item?.url_img} target="_blank" />
