@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { loginContext } from "../../contexts/loginContext";
 
@@ -11,6 +11,7 @@ import usuario_icon from "../../assets/usuario_icon.png";
 import { ShoppingCart } from "phosphor-react";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
 import api from '../../services/api';
+import { Pesquisa } from "../../pages/pesquisa/Pesquisa";
 
 
 
@@ -20,6 +21,7 @@ export function Header(props) {
     const { logado, useLocalStorage, logoutLocalStorage } =
         useContext(loginContext);
     const { carrinho } = useContext(carrinhoContext);
+    const navigate = useNavigate()
 
     async function buscarLivro(pesquisa) {
 
@@ -27,7 +29,7 @@ export function Header(props) {
             .get("/livros")
             .then((response) => {
                 const resultadoPesquisa = response.data.filter(livro => livro.titulo.toLowerCase().includes(pesquisa.toLowerCase()))
-                setBook(resultadoPesquisa)
+                navigate("/pesquisa", { state: resultadoPesquisa })
 
             })
             .catch((err) => {

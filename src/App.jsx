@@ -15,6 +15,7 @@ import { CarrinhoProvider } from "./contexts/carrinhoContext";
 
 import { ToastContainer } from "react-toastify";
 import { DetalhesProduto } from "./pages/detalhesProduto/DetalhesProduto";
+import { Pesquisa } from "./pages/pesquisa/Pesquisa";
 
 export function App() {
   const [book, setBook] = useState([]);
@@ -30,6 +31,7 @@ export function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/carrinho" element={<Carrinho />} />
               <Route path="/detalhes/:id" element={<DetalhesProduto />} />
+              <Route path="/pesquisa" element={<Pesquisa />} />
             </Routes>
             <Footer />
             <ToastContainer />
