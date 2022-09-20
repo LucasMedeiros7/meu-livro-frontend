@@ -1,17 +1,22 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import avaliacaoCliente from "../../assets/avaliação-do-cliente.png";
 import styles from "./DetalhesProduto.module.css";
 import api from "../../services/api";
-
-
+import { carrinhoContext } from "../../contexts/carrinhoContext";
 
 export function DetalhesProduto() {
   const [leiaMais, setLeiaMais] = useState(true);
-
   const [livro, setLivro] = useState(null);
-  const { id } = useParams()
-  console.log(id)
+
+  const { id } = useParams();
+  const { adicionaNoCarrinho } = useContext(carrinhoContext);
+  const navigate = useNavigate();
+
+  function vaiProCarrinho() {
+    adicionaNoCarrinho(livro);
+    navigate("/carrinho");
+  }
 
   useEffect(() => {
     api
@@ -19,24 +24,20 @@ export function DetalhesProduto() {
       .then((response) => setLivro(response.data[0]))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
-        console.log(livro)
       });
-
   }, []);
 
-  if (!livro)
-    return
-
+  if (!livro) return;
 
   function alteraComportamentoDaDescricao() {
-    if (livro?.descricao.length < 644) {
+    if (livro?.descricao.length < 610) {
       return <p>{livro?.descricao}</p>;
     } else {
       return (
-        <p>
-          {leiaMais ? livro?.descricao.slice(0, 644) + "..." : livro?.descricao}
+        <p className={styles.descricaoProduto}>
+          {leiaMais ? livro?.descricao.slice(0, 610) + "..." : livro?.descricao}
 
-          <span onClick={() => setLeiaMais((estadoAtual) => !estadoAtual)}>
+          <span onClick={() => setLeiaMais(!leiaMais)}>
             {leiaMais ? "Leia mais" : "Leia menos"}
           </span>
         </p>
@@ -53,15 +54,14 @@ export function DetalhesProduto() {
         <div className={styles.precoProduto}>
           <p>R$ {livro?.preco}</p>
           <p>Entrega GRÁTIS no seu primeiro pedido</p>
-          <button>Comprar</button>
+          <button onClick={vaiProCarrinho}>Comprar</button>
         </div>
         <div className={styles.avaliacaoProduto}>
           <span>Avaliações de clientes</span>
           <img src={avaliacaoCliente} alt="" />
         </div>
-        <div className={styles.descricaoProduto}>
-          {alteraComportamentoDaDescricao()}
-        </div>
+
+        {alteraComportamentoDaDescricao()}
       </div>
     </div>
   );

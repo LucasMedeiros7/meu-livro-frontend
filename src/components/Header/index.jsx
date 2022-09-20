@@ -5,7 +5,7 @@ import { loginContext } from "../../contexts/loginContext";
 
 import { Logo } from "./logoHeader.jsx";
 
-import S from "./header.module.css";
+import S from "./Header.module.css";
 import usuario_icon from "../../assets/usuario_icon.png";
 import { ShoppingCart } from "phosphor-react";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
