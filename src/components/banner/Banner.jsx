@@ -1,9 +1,8 @@
-import styles from "./Banner.module.css";
-
 import mulherFelizERelaxada from "../../assets/mulher-feliz-e-relaxada.png";
 import livroBanner1 from "../../assets/livro-banner-1.png";
 import livroBanner2 from "../../assets/livro-banner-2.png";
 import livroBanner3 from "../../assets/livro-banner-3.png";
+import styles from "./Banner.module.css";
 
 export function Banner() {
   return (
