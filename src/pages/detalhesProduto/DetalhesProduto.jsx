@@ -4,6 +4,7 @@ import avaliacaoCliente from "../../assets/avaliação-do-cliente.png";
 import styles from "./DetalhesProduto.module.css";
 import api from "../../services/api";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
+import { Loading } from "../../components/Loading/Loading";
 
 export function DetalhesProduto() {
   const [leiaMais, setLeiaMais] = useState(true);
@@ -27,7 +28,9 @@ export function DetalhesProduto() {
       });
   }, []);
 
-  if (!livro) return;
+  if (!livro) {
+    return <Loading />;
+  }
 
   function alteraComportamentoDaDescricao() {
     if (livro?.descricao.length < 610) {
