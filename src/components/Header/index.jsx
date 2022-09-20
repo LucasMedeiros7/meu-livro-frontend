@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { loginContext } from "../../contexts/loginContext";
@@ -8,13 +8,35 @@ import { Logo } from "./logoHeader.jsx";
 import S from "./header.module.css";
 import carrinho_icon from "../../assets/carrinho_icon.png";
 import usuario_icon from "../../assets/usuario_icon.png";
+import api from '../../services/api';
 
-export function Header() {
+
+export function Header(props) {
+    const { setBook } = props
+    const [digitado, setDigitado] = useState('')
     const { logado, useLocalStorage, logoutLocalStorage } =
         useContext(loginContext);
 
+    async function buscarLivro(pesquisa) {
+
+        api
+            .get("/livros")
+            .then((response) => {
+                const resultadoPesquisa = response.data.filter(livro => livro.titulo.toLowerCase().includes(pesquisa.toLowerCase()))
+                setBook(resultadoPesquisa)
+
+            })
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+                // pode ser a chamada de uma tela 404
+            });
+
+    }
+
+
     const entrarOuSair = () => {
         const usuarioLogado = useLocalStorage();
+
 
         if (!logado) {
             return (
@@ -46,8 +68,9 @@ export function Header() {
             </div>
 
             <div className={S.box_input}>
-                <input type="text" />
-                <button className={S.lupinha_botao} type="submit" />
+                <input type="text" onChange={(e) => setDigitado(e.target.value)} />
+
+                <button onClick={() => buscarLivro(digitado)} className={S.lupinha_botao} type="submit" />
             </div>
 
             <div className={S.box_icons}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,13 +12,15 @@ import { Footer } from "./components/footer/footer";
 import { LoginProvider } from "./contexts/loginContext";
 
 export function App() {
+  const [book, setBook] = useState([]);
+
   return (
     <div>
       <Router>
         <LoginProvider>
-          <Header />
+          <Header setBook={setBook} />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home setBook={setBook} book={book} />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/login" element={<Login />} />
           </Routes>
