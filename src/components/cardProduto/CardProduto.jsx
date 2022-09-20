@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
-
+import { Link } from "react-router-dom"
 import setas from "../../assets/seta_icon.png";
 
 import api from "../../services/api";
@@ -48,17 +48,19 @@ export function CardProduto() {
           {book?.map((item, index) => {
             return (
               <div className="items" key={index}>
-                <div className="imgProduto">
-                  <img src={item?.url_img} target="_blank" />
-                </div>
 
-                <div className="infoProduto">
-                  <strong>
-                    <p id="titulo">{item?.titulo}</p>
-                  </strong>
-                  <p id="preco">R$ {item?.preco}</p>
-                </div>
+                <Link to={`/detalhes/${item.id_livro}`}>
+                  <div className="imgProduto">
+                    <img src={item?.url_img} target="_blank" />
+                  </div>
 
+                  <div className="infoProduto">
+                    <strong>
+                      <p id="titulo">{item?.titulo}</p>
+                    </strong>
+                    <p id="preco">R$ {item?.preco}</p>
+                  </div>
+                </Link>
                 <div className="btnComprar">
                   <button onClick={() => adicionaNoCarrinho(item)}>
                     <strong>Comprar</strong>

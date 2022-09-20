@@ -13,7 +13,7 @@ import { LoginProvider } from "./contexts/loginContext";
 import { ToastContainer } from "react-toastify";
 import { Carrinho } from "./pages/carrinho/Carrinho";
 import { CarrinhoProvider } from "./contexts/carrinhoContext";
-
+import { DetalhesProduto } from "./pages/detalhesProduto/DetalhesProduto.jsx"
 export function App() {
   return (
     <div>
@@ -26,6 +26,7 @@ export function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/carrinho" element={<Carrinho />} />
+              <Route path="/detalhes/:id" element={<DetalhesProduto />} />
             </Routes>
             <Footer />
             <ToastContainer />
