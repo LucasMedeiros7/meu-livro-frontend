@@ -11,14 +11,13 @@
 .detalhesProduto {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   margin-bottom: 7.5rem;
 }
 
 .detalhesProduto h1 {
   font-size: 2.5rem;
   font-weight: 500;
-  margin-left: -2rem;
+  margin-bottom: 2rem;
 }
 
 .detalhesProduto .precoProduto p:nth-child(1) {
@@ -39,7 +38,7 @@
   border: none;
   background-color: #ffc700;
   border-radius: 8px;
-
+  margin-bottom: 0.75rem;
   font-size: 0.875rem;
   font-weight: 700;
   cursor: pointer;
@@ -48,6 +47,8 @@
 .detalhesProduto .avaliacaoProduto {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
 }
 
 .detalhesProduto .avaliacaoProduto span {
@@ -60,14 +61,14 @@
   width: fit-content;
 }
 
-.detalhesProduto .descricaoProduto p {
+.descricaoProduto {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.25rem;
 }
 
 .descricaoProduto span {
-  margin-left: 6px;
+  display: block;
+
   font-weight: 600;
   color: #1479ff;
   cursor: pointer;

@@ -20,7 +20,7 @@
   border-radius: 8px;
 }
 
-input {
+.box_input input {
   width: 414px;
   height: 39px;
   border: none;
