@@ -28,6 +28,7 @@
   box-shadow: 0 0 0 0;
   outline: 0;
   border-radius: 8px;
+  padding-left: 15px;
 }
 
 .lupinha_botao {
@@ -41,6 +42,11 @@
   padding-right: 40px;
   margin: 0px;
 }
+
+.lupinha_botao:hover {
+  cursor: pointer;
+}
+
 
 .box_icons {
   width: 220px;
@@ -85,6 +91,7 @@
   padding-left: 1rem;
   white-space: nowrap;
   font-family: "Montserrat";
+  white-space: nowrap;
 }
 
 .quantidadeCarrinho {

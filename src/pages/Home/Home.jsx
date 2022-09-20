@@ -5,13 +5,14 @@ import { Novidades } from "../../components/Section/Novidades/Novidades.jsx";
 import { Vantagens } from "../../components/Section/Vantagens/Vantagens.jsx";
 import { Categoria } from "../../components/categorias/Categorias.jsx";
 
-export const Home = () => {
+export const Home = (props) => {
+  const { book, setBook } = props;
   return (
     <div>
       <Banner />
       <Vantagens />
-      <CardProduto />
-      {/* <Categoria/> */}
+      <CardProduto book={book} setBook={setBook} />
+      <Categoria />
       <Editoras />
       <Novidades />
     </div>
