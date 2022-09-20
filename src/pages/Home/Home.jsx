@@ -11,7 +11,7 @@ export const Home = () => {
       <Banner />
       <Vantagens />
       <CardProduto />
-      <Categoria/>
+      {/* <Categoria/> */}
       <Editoras />
       <Novidades />
     </div>

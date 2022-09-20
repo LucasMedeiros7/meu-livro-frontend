@@ -7,3 +7,10 @@
   text-decoration: none;
   color: black;
 }
+
+@media (max-width: 720px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+}

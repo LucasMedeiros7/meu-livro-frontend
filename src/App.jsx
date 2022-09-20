@@ -22,7 +22,7 @@ export function App() {
       <BrowserRouter>
         <LoginProvider>
           <CarrinhoProvider>
-            <Header />
+            {/* <Header /> */}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/cadastro" element={<Cadastro />} />
