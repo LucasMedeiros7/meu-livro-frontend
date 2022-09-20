@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+.container h2 {
+  padding-bottom: 30px;
+}
+.linhaUm, .linhaDois {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.linhaUm img, .linhaDois img {
+  margin: 0 10px;
+}
+#um {
+  width: 220px;
+}
+#dois {
+  width: 290px;
+  margin: 0 0 0 10px;
+}
+#tres {
+  width: 250px;
+}

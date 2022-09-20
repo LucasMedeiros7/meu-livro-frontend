@@ -83,8 +83,8 @@ input {
 .texto_logo {
   padding-top: 5px;
   padding-left: 1rem;
+  white-space: nowrap
   font-family: "Montserrat";
-  white-space: nowrap;
 }
 
 .quantidadeCarrinho {

@@ -17,7 +17,6 @@ export function CardProduto() {
       .then((response) => setBook(response.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
-        // pode ser a chamada de uma tela 404
       });
   }, []);
 
@@ -42,13 +41,15 @@ export function CardProduto() {
       </div>
 
       <div className="conteinerProdutos">
-        <h2>Livros</h2>
+        <h2>Conheça nosso catálogo de livros</h2>
 
         <div className="carrossel" ref={carousel}>
           {book?.map((item, index) => {
             return (
               <div className="items" key={index}>
-
+                <div className="imgProduto">
+                  <img src={item?.url_img} target='_blank' />
+                </div>
                 <Link to={`/detalhes/${item.id_livro}`}>
                   <div className="imgProduto">
                     <img src={item?.url_img} target="_blank" />
@@ -63,7 +64,7 @@ export function CardProduto() {
                 </Link>
                 <div className="btnComprar">
                   <button onClick={() => adicionaNoCarrinho(item)}>
-                    <strong>Comprar</strong>
+                    <strong>Adicionar ao carrinho</strong>
                   </button>
                 </div>
               </div>
@@ -79,27 +80,4 @@ export function CardProduto() {
       </div>
     </section>
   );
-}
-
-{
-  /* <div className="items">
-            {book?.map((item, index) => (
-              // <div className="containerInterno" >
-                <div className="cardProduto" key={index}>
-                  <div className="imgProduto">
-                    <img src={item?.url_img} target='_blank'/>
-                  </div>
-
-                  <div className="infoProduto">
-                    <strong><p id="titulo">{item?.titulo}</p></strong>
-                    <p id="preco">R$ {item?.preco}</p>
-                  </div>
-
-                  <div className="btnComprar">
-                    <button><strong>Comprar</strong></button>
-                  </div>
-                </div>
-            // </div>
-            ))}
-          </div> */
 }
