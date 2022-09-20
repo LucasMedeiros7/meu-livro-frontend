@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { registrarUsuario } from "../../services/usuarioApi";
 import { validaDadosDeCadastro } from "../../utils/validaFormulario";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import styles from "./Cadastro.module.css";
@@ -30,12 +30,19 @@ export function Cadastro() {
     });
 
   async function buscaCep(event) {
+    console.log(event.target.value);
     try {
       const res = await fetch(
         `https://viacep.com.br/ws/${event.target.value}/json/`
       );
 
-      const { localidade, uf, logradouro } = await res.json();
+      const data = await res.json();
+      const { localidade, uf, logradouro } = data;
+
+      if (data.erro) {
+        toastAlertErro("CEP informado não foi encontrado");
+        return;
+      }
 
       setDadosUsuario({
         ...dadosUsuario,
@@ -82,9 +89,7 @@ export function Cadastro() {
       toastAlertErro("Este email já está cadastrado");
     } else {
       toastAlertSucesso("Cadastro efetuado com sucesso");
-      setTimeout(() => {
-        navigate("/login");
-      }, 2000);
+      navigate("/login");
     }
   }
 
@@ -183,8 +188,6 @@ export function Cadastro() {
           Finalizar cadastro
         </button>
       </form>
-
-      <ToastContainer />
     </div>
   );
 }

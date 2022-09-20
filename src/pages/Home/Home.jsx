@@ -9,11 +9,11 @@ export const Home = () => {
   return (
     <div>
       <Banner />
+      <Vantagens />
       <CardProduto />
       <Categoria/>
       <Editoras />
       <Novidades />
-      <Vantagens />
     </div>
-  )
-}
+  );
+};

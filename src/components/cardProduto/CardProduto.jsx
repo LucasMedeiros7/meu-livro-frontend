@@ -1,11 +1,15 @@
-import React, { useEffect, useState, useRef } from "react";
-import setas from '../../assets/seta_icon.png'
-import api from '../../services/api';
-import './CardProduto.css'
+import React, { useEffect, useState, useRef, useContext } from "react";
+import { carrinhoContext } from "../../contexts/carrinhoContext";
+
+import setas from "../../assets/seta_icon.png";
+
+import api from "../../services/api";
+import "./CardProduto.css";
 
 export function CardProduto() {
   const [book, setBook] = useState([]);
   const carousel = useRef(null);
+  const { adicionaNoCarrinho } = useContext(carrinhoContext);
 
   useEffect(() => {
     api
@@ -48,15 +52,18 @@ export function CardProduto() {
                 </div>
 
                 <div className="infoProduto">
-                  <strong><p id="titulo">{item?.titulo}</p></strong>
+                  <strong>
+                    <p id="titulo">{item?.titulo}</p>
+                  </strong>
                   <p id="preco">R$ {item?.preco}</p>
                 </div>
 
                 <div className="btnComprar">
-                  <button><strong>Adicionar ao carrinho</strong></button>
+                  <button onClick={() => adicionaNoCarrinho(item)}>
+                    <strong>Adicionar ao carrinho</strong>
+                  </button>
                 </div>
               </div>
-
             );
           })}
         </div>

@@ -83,11 +83,28 @@ input {
 .texto_logo {
   padding-top: 5px;
   padding-left: 1rem;
-<<<<<<< HEAD
   white-space: nowrap
-}
-=======
   font-family: "Montserrat";
-  white-space: nowrap;
 }
->>>>>>> 969f406385547d6b26707d477a5b7a2e06ddd853
+
+.quantidadeCarrinho {
+  position: relative;
+}
+
+.quantidadeCarrinho span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  height: min-content;
+
+  padding: 5px 9px;
+  transform: translateX(14px);
+
+  background-color: red;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: sans-serif;
+}
