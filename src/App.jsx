@@ -19,7 +19,7 @@ import { Pesquisa } from "./pages/pesquisa/Pesquisa";
 
 export function App() {
   const [book, setBook] = useState([]);
-  const [pesquisado, setPesquisado] = useState('')
+  const [pesquisado, setPesquisado] = useState("");
 
   return (
     <div>
@@ -27,13 +27,20 @@ export function App() {
         <LoginProvider>
           <CarrinhoProvider>
             <Header setBook={setBook} setPesquisado={setPesquisado} />
+
             <Routes>
-              <Route path="/" element={<Home setBook={setBook} book={book} />} />
+              <Route
+                path="/"
+                element={<Home setBook={setBook} book={book} />}
+              />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/carrinho" element={<Carrinho />} />
               <Route path="/detalhes/:id" element={<DetalhesProduto />} />
-              <Route path="/pesquisa" element={<Pesquisa pesquisado={pesquisado} />} />
+              <Route
+                path="/pesquisa"
+                element={<Pesquisa pesquisado={pesquisado} />}
+              />
             </Routes>
             <Footer />
             <ToastContainer />
