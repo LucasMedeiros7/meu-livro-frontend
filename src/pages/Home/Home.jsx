@@ -1,4 +1,4 @@
-import { Banner } from "../../components/banner/Banner.jsx";
+import { Banner } from "../../components/Banner/Banner.jsx";
 import { CardProduto } from "../../components/cardProduto/CardProduto.jsx";
 import { Editoras } from "../../components/Section/Editora/Editoras.jsx";
 import { Novidades } from "../../components/Section/Novidades/Novidades.jsx";

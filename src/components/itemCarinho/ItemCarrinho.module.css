@@ -6,6 +6,11 @@
   margin-bottom: 1.375rem;
 }
 
+.itemCarrinho img,
+.tituloEAutor strong {
+  cursor: pointer;
+}
+
 .itemCarrinho img {
   width: 5rem;
   flex: 1;

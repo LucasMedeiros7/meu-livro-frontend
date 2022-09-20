@@ -3,21 +3,33 @@ import { carrinhoContext } from "../../contexts/carrinhoContext";
 import { X } from "phosphor-react";
 
 import styles from "./ItemCarrinho.module.css";
+import { useNavigate } from "react-router-dom";
 
 export function ItemCarrinho({ produto }) {
   const { item: livro } = produto;
 
   const { incrementaCarrinho, decrementaCarrinho, removeDoCarrinho } =
     useContext(carrinhoContext);
+  const navigate = useNavigate();
 
   const decrementaDesabilitado = produto.quantidade === 1;
 
+  const irParaDetalhes = (id) => {
+    navigate(`/detalhes/${id}`, { replace: true });
+  };
+
   return (
     <div className={styles.itemCarrinho}>
-      <img src={livro.url_img} alt="Capa do livro" />
+      <img
+        onClick={() => irParaDetalhes(livro.id_livro)}
+        src={livro.url_img}
+        alt="Capa do livro"
+      />
 
       <div className={styles.tituloEAutor}>
-        <strong>{livro.titulo}</strong>
+        <strong onClick={() => irParaDetalhes(livro.id_livro)}>
+          {livro.titulo}
+        </strong>
         <p>{livro.autor}</p>
 
         <div className={styles.quantidadeCarrinho}>
