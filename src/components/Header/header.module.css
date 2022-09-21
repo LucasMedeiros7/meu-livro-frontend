@@ -1,15 +1,19 @@
+.wrapper {
+  background-color: #ffc700;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
 .box_header {
-  width: 100%;
+  width: 90%;
   height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 16px;
-
   background-color: #ffc700;
-
-  position: sticky;
-  top: 0;
+  margin: 0 auto;
 }
 
 .box_input {
@@ -18,15 +22,15 @@
   display: flex;
   align-items: center;
   border-radius: 8px;
+  max-width: 520px;
+  width: 100%;
 }
 
 .box_input input {
-  width: 414px;
+  width: 100%;
   height: 39px;
   border: none;
-  border: none;
-  box-shadow: 0 0 0 0;
-  outline: 0;
+  outline: none;
   border-radius: 8px;
   padding-left: 15px;
 }
@@ -47,18 +51,17 @@
   cursor: pointer;
 }
 
-
 .box_icons {
   width: 220px;
   height: 50px;
-  padding-right: 3.5rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
 }
 
 .texto_usuario {
-  padding-top: 5px;
+  width: min-content;
   font-weight: bold;
   font-size: 11px;
   text-decoration: underline;
@@ -67,7 +70,6 @@
 .usuario_icon {
   width: 49px;
   height: 40px;
-  padding-right: 8px;
 }
 
 .carrinho_icon {
@@ -76,7 +78,6 @@
 }
 
 .logo {
-  padding-left: 3.5rem;
   display: flex;
 }
 
@@ -114,4 +115,72 @@
   font-weight: 600;
   font-size: 12px;
   font-family: sans-serif;
+}
+
+.usuario_iconMobile {
+  display: none;
+}
+
+@media (max-width: 1105px) {
+  .box_header {
+    padding-inline: 0;
+    gap: 40px;
+  }
+
+  .box_input {
+    width: 90%;
+  }
+}
+
+@media (max-width: 910px) {
+  .logo {
+    padding: 0;
+  }
+  .box_header {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 776px) {
+  .usuario_iconMobile {
+    display: flex;
+    max-width: 49px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .usuario_icon,
+  .texto_usuario {
+    display: none;
+  }
+
+  .box_icons {
+    padding: 0;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 680px) {
+  .box_header {
+    justify-content: center;
+  }
+
+  .box_icons {
+    padding: 0;
+    width: 33%;
+    gap: 3px;
+  }
+
+  .usuario_iconMobile {
+    width: 90px;
+  }
+
+  .box_input {
+    justify-self: center;
+  }
+
+  .texto_logo {
+    display: none;
+  }
 }

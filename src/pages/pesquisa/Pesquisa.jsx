@@ -1,5 +1,5 @@
-import { useRef, useContext } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useRef, useContext, useEffect } from "react";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import styles from "../../components/cardProduto/CardProduto.module.css";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
 import "./pesquisa.css";
@@ -7,23 +7,36 @@ import "./pesquisa.css";
 export function Pesquisa(props) {
   const { adicionaNoCarrinho } = useContext(carrinhoContext);
   const { state } = useLocation();
+  const navigate = useNavigate();
 
   function MostrarMensagem() {
     if (state.length > 0 || props.pesquisado.length > 0) {
-      return <h2>resultados de : "{props.pesquisado}"</h2>;
+      return <h2>Resultados de : "{props.pesquisado}"</h2>;
     }
     return <></>;
   }
 
   const carousel = useRef(null);
 
-  return (
-    <div>
-      <MostrarMensagem />
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
 
-      <div style={{ display: "flex" }}>
+    if (!state) {
+      navigate("/", { replaced: true });
+    }
+  }, []);
+
+  if (!state) return null;
+
+  return (
+    <div className="wrapperPesquisa">
+      <MostrarMensagem className="mostrarMensagem" />
+
+      <div className="cards">
         {state.length > 0 ? (
-          <div className={styles.carrossel} ref={carousel}>
+          <>
             {state?.map((item, index) => {
               return (
                 <div className={styles.items} key={index}>
@@ -47,7 +60,7 @@ export function Pesquisa(props) {
                 </div>
               );
             })}
-          </div>
+          </>
         ) : (
           <div className="mensagemDeNaoEncontrado">
             <h2>Não encontramos o seu livro.</h2>

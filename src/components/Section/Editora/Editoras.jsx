@@ -1,5 +1,10 @@
 import styles from "./editora.module.css";
 
+import editoraRocco from "../../../assets/editora-1.jpg";
+import editoraGrupoAutentica from "../../../assets/editora-2.png";
+import editoraPensamento from "../../../assets/editora-3.png";
+import editoraPipoca from "../../../assets/editora-4.png";
+
 export const Editoras = () => {
   return (
     <section className={styles.section}>
@@ -8,19 +13,16 @@ export const Editoras = () => {
       </h3>
 
       <div className={styles.container}>
-        <img src="src/assets/editora-1.jpg" alt="logo da Editora Rocco" />
+        <img src={editoraRocco} alt="logo da Editora Rocco" />
 
         <img
-          src="src/assets/editora-2.png"
+          src={editoraGrupoAutentica}
           alt="logo da Editora Grupo Autêntica"
         />
 
-        <img src="src/assets/editora-3.png" alt="logo da Editora Pensamento" />
+        <img src={editoraPensamento} alt="logo da Editora Pensamento" />
 
-        <img
-          src="src/assets/editora-4.png"
-          alt="logo da Editora Pipoca e Nanquim"
-        />
+        <img src={editoraPipoca} alt="logo da Editora Pipoca e Nanquim" />
       </div>
     </section>
   );

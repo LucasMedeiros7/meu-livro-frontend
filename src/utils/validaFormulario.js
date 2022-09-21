@@ -16,7 +16,7 @@ export function validaDadosDeCadastro({ email, senha, cpf }) {
   if (senha.length < 6) {
     return {
       erro: true,
-      mensagem: "A senha deve conter mais de 6 digitos",
+      mensagem: "A senha deve conter no mínimo 6 digitos",
     };
   }
 
@@ -34,4 +34,4 @@ export function validaDadosDeCadastro({ email, senha, cpf }) {
     };
   }
   return true;
-};
+}

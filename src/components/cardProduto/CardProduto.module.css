@@ -90,15 +90,15 @@
 
   .buttons {
     position: absolute;
-    left: 50px;
-    bottom: 0px;
+    left: 40px;
+    bottom: -5px;
     height: fit-content;
   }
 
   .buttons2 {
     position: absolute;
     right: 10px;
-    bottom: -5px;
+    bottom: -10px;
     height: fit-content;
   }
 }

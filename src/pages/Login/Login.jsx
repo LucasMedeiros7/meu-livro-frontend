@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginContext } from "../../contexts/loginContext";
 import { loginUsuario } from "../../services/usuarioApi.js";
@@ -12,6 +12,12 @@ export const Login = () => {
   const [dadosUsuario, setDadosUsuario] = useState({ email: "", senha: "" });
   const { loginLocalStorage } = useContext(loginContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
 
   async function evento(event) {
     event.preventDefault();

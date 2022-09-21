@@ -1,11 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { ItemCarrinho } from "../../components/itemCarinho/ItemCarrinho";
 import { carrinhoContext } from "../../contexts/carrinhoContext";
 import { loginContext } from "../../contexts/loginContext";
 import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+
 import styles from "./Carrinho.module.css";
 
 export function Carrinho() {
@@ -13,6 +13,12 @@ export function Carrinho() {
     useContext(carrinhoContext);
   const { logado } = useContext(loginContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
 
   function checkout() {
     if (logado) {

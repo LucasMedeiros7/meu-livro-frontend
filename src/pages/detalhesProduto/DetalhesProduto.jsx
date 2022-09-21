@@ -20,6 +20,10 @@ export function DetalhesProduto() {
   }
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+
     api
       .get(`/livros/${id}`)
       .then((response) => setLivro(response.data[0]))
