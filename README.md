@@ -1,42 +1,77 @@
 # 📚 Livraria - Meu livro
 
-<img src="./src/assets/capaReadme.png" alt="Capa readme" >
+![image](https://user-images.githubusercontent.com/94567136/191383819-240aae47-43a7-4bfb-8f47-1e1bb1d2b76b.png)
+
 
 <br>
 <p> Em nosso site o cliente navega com muita facilidade pois desenvolvemos um layout claro e objetivo. Os livros são listados na landing page, mas também podem ser encontrados com a busca na barra de pesquisa, trazendo todos os dados do livro buscado. Depois de fazer um cadastro e realizar o login o cliente pode fazer a sua compra e ser direcionado para o carrinho. <p>
 
+Clique <a href="https://meu-livro-frontend.vercel.app/
+">aqui</a> para acessar uma aplicação via web. 🔗
+<br/>
 <br/>
 
-# 🧠 Cultive o hábito da leitura
+# BACK-END
+Desenvolvemos e populamos uma API própria para o nosso projeto
 
-O hábito da leitura vem sendo deixado de lado devido ao aumento da tecnologia, antes as pesquisas que eram feitas em livros e enciclopédias passaram a ser pela internet, que contém vídeos, imagens e áudios à disposição, dificultando o interesse em ler.
+Clique <a href="https://meulivroapi.herokuapp.com/livros
+">aqui</a> para acessar nossa API. 🔗
 
-Porém, quem lê tem a possibilidade de viajar para inúmeros lugares e viver em mundos diferentes e participa de experiências que vão além do mundo real, mas que dialogam com a realidade, o que permite aprendizados e reflexões profundas. São inúmeras as pesquisas que comprovam que ler aumenta as conexões neurais, fazendo com que o cérebro funcione melhor.  
+Clique <a href="https://github.com/LucasMedeiros7/meu-livro-api
+">aqui</a> para acessar o repositorio da API. 🔗
+<br/>
+<br/>
 
-##
 
-<!-- # Tabela de conteúdos
+# UX-UI
 
-- [Pré-requisitos](#-pré-requisitos)
-- [Tecnologias utilizadas](#-Tecnologias-utilizadas)
-- [Rodando o projeto](#-Rodando-o-projeto)
-- [Equipe](#-Desenvolvido-por) -->
+Pensamos em toda a estrutura e a nossa ui-ux <a href="https://github.com/thainarapenha
+">Thainara</a> desenvolveu nossas telas.
 
-## 📚 Pré-requisitos
+Clique <a href="https://www.figma.com/file/yZjypTYfmV5GwB2Bw76UQA/Telas-projeto-MEU-LIVRO?node-id=0%3A1
+">aqui</a> para acessar o Figma. 🔗
+<br/>
+<br/>
 
-- Node.js
-- NPM ou Yarn 
+
+
+# INFORMAÇÕES GERAIS 
+
+##  🌙 Possibilidades de um usuário médio na aplicação
+
+- [x] Cadastrar um usuário
+- [x] Login na conta do usuário
+- [x] Pesquisar pelo seu livro 
+- [x] Adicionar seu livro ao carrinho
+- [x] Se cadastrar para receber promoções 
+- [x] Ver toda a descrição do seu livro
+
+
+## 🔆 Fluxo de ajuda ao navegar pela plataforma
+- Página inicial
+- Cadastre-se
+- Entrar
+- Carrinho
+- Detalhes do produto
+- Listagem de livros
+
+<br/>
+
+
 
 ## 🛠️ Tecnologias utilizadas
 
+<div style ="display:inline"><br/>
 
-<div style ="display:inline_block"><br/>
-    <img align = 'center' alt='html5' src = 'https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white'>
-    <img align = 'center' alt='css3' src = 'https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white'>
-    <img align = 'center' alt='css3' src = 'https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E'>
-    <img align = 'center' alt='css3' src = 'https://img.shields.io/badge/-React-05122A?style=for-the-badge&logoflat&logo=react'>
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 </div></br>
 
 
@@ -45,11 +80,17 @@ Porém, quem lê tem a possibilidade de viajar para inúmeros lugares e viver em
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [API Via CEP](https://viacep.com.br/)
 - [Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
-- [Trello](https://trello.com)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [Insomnia](https://insomnia.rest/)
+- [Vercel](https://vercel.com/)
 - [Figma](https://www.figma.com)
-
-
+- [Trello](https://trello.com/)
 <br>
+
+<br/>
+
+
 
 ##  🔄 Rodando o projeto
 
@@ -61,16 +102,22 @@ Clonando o repositório:
 git clone https://github.com/LucasMedeiros7/meu-livro-frontend.git
 ```
 
-
 Instalando todos os pacotes:
 
 ```
 npm install
 ```
 
+Rodando o projeto:
+
+```
+npm run dev
+```
+<br/>
 
 
-## ✨🤓 Trabalho em equipe :
+
+## ✨ Trabalho em equipe :
 
 <table align='center'>
   <tr>
