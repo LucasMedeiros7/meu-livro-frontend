@@ -1,5 +1,11 @@
 import styles from "./vantagens.module.css";
 
+import carrinho from "../../../assets/carrinho.png";
+import preco from "../../../assets/preco.png";
+import caminhao from "../../../assets/caminhao.png";
+import dinheiro from "../../../assets/dinheiro.png";
+import cliente from "../../../assets/cliente.png";
+
 export const Vantagens = () => {
   return (
     <section className={styles.sectionVantagens}>
@@ -10,7 +16,7 @@ export const Vantagens = () => {
           <span className={styles.span}>
             <img
               className={styles.img}
-              src="src/assets/carrinho.png"
+              src={carrinho}
               alt="carrinho de compras"
             />
           </span>
@@ -21,7 +27,7 @@ export const Vantagens = () => {
           <span className={styles.span}>
             <img
               className={styles.img}
-              src="src/assets/preco.png"
+              src={preco}
               alt="mão com um cifrão em cima"
             />
           </span>
@@ -30,7 +36,7 @@ export const Vantagens = () => {
         <div className={styles.icons}>
           <p>Entrega rápida</p>
           <span className={styles.span}>
-            <img src="src/assets/caminhao.png" alt="caminhão" width="25%" />
+            <img src={caminhao} alt="caminhão" width="25%" />
           </span>
         </div>
 
@@ -39,7 +45,7 @@ export const Vantagens = () => {
           <span className={styles.span}>
             <img
               className={styles.img}
-              src="src/assets/dinheiro.png"
+              src={dinheiro}
               alt="símbolo do cifrão"
             />
           </span>
@@ -48,11 +54,7 @@ export const Vantagens = () => {
         <div className={styles.icons}>
           <p>Arrependimento zero!</p>
           <span className={styles.span}>
-            <img
-              className={styles.img}
-              src="src/assets/cliente.png"
-              alt="rosto feliz"
-            />
+            <img className={styles.img} src={cliente} alt="rosto feliz" />
           </span>
         </div>
       </div>
