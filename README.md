@@ -14,7 +14,7 @@ Clique <a href="https://meu-livro-frontend.vercel.app/
 # BACK-END
 Desenvolvemos e populamos uma API própria para o nosso projeto
 
-Clique <a href="https://meulivroapi.herokuapp.com/livros
+Clique <a href="https://meu-livro-api.onrender.com/livros
 ">aqui</a> para acessar nossa API. 🔗
 
 Clique <a href="https://github.com/LucasMedeiros7/meu-livro-api
